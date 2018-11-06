@@ -12,9 +12,11 @@ seed(SEED)
 
 
 cdate = None
+prevdate = None
 def initcdate():
-  global cdate
+  global cdate, prevdate
   cdate = meteo.get_first_day_for_temperature()+timedelta(days=120)
+  prevdate = cdate-timedelta(days=1)
 
 initcdate()
 
@@ -25,16 +27,17 @@ totalleafarea = 0
 totalleafnb = 0
 
 def StartEach():
-  global cdate, totalleafarea, totalleafnb 
+  global cdate, prevdate, totalleafarea, totalleafnb 
   totalleafarea, totalleafnb = 0, 0
   if cdate.month == 12:
     useGroup(3)
   else:
     useGroup(0)
   if cdate.month in range(11,13)+range(1,4):
-    deltatime = 10
+    deltatime = max(TIMESTEP,10)
   else:
-    deltatime = 1
+    deltatime = TIMESTEP
+  prevdate = cdate
   cdate += timedelta(days=deltatime)
 
 
@@ -74,11 +77,13 @@ Axiom:
 derivation length: 600
 production:
 group 0:
-
+#decomposition:
+#maximum depth: 10
 Meristem(p):
+  print 'Meristem', p.init_date, cdate
   if p.init_date <= cdate:
     previousnbmetamer = p.mp.nbmetamer
-    nbnewmetamer = p.mp.accumulate(cdate)
+    nbnewmetamer = p.mp.accumulate_range(p.init_date, cdate)
     for i in xrange(nbnewmetamer):
       rank =  previousnbmetamer+i
       normalizedrank = rank / p.mp.nbfinalmetamer
@@ -105,22 +110,22 @@ Meristem(p):
         produce Meristem(init_meristem(Proleptic, succession(p.gutype), p.init_date, p.mp.nbfinalmetamer))
           
   
-
+production:
 Internode(p) :
-  cttime = mthermaltime.get_effective_temperature(cdate)
-  p.ttime += cttime
+  cttime = mthermaltime.get_effective_temperatures(prevdate, cdate)
+  p.ttime += sum(cttime)
   
-  p.length += growth_rate(p.ttime, p.finallength, tip_internode, b_internode)*cttime
-  p.width += growth_rate(p.ttime, InternodeRadius, tip_internode, b_internode)*cttime
+  p.length = growth_logistic(p.ttime, p.finallength, tip_internode, b_internode)
+  p.width = growth_logistic(p.ttime, InternodeRadius, tip_internode, b_internode)
   
   produce Internode(p)
 
 Leaf(p):
   global totalleafarea, totalleafnb
-  cttime = mthermaltime.get_effective_temperature(cdate)
-  p.ttime += cttime
+  cttime = mthermaltime.get_effective_temperatures(prevdate, cdate)
+  p.ttime += sum(cttime)
   
-  p.area += growth_rate(p.ttime, p.finalarea, tip_leaf, b_leaf)*cttime
+  p.area = growth_logistic(p.ttime, p.finalarea, tip_leaf, b_leaf)
   totalleafarea += p.area
   totalleafnb += 1
   
@@ -146,7 +151,7 @@ Leaf(p) :
   if p.area > 0:
     width = sqrt(p.area / 1.4)
     length = 2 * width
-    produce ,(10)  SetContour(leafsection) TextureVScale(1./length) _(width/2) F(length)
+    produce ,(10)  @g(leafshape,width) # SetContour(leafsection) TextureVScale(1./length) _(width/2) F(length)
 
 
 Flower(t) :
@@ -175,7 +180,7 @@ def __initialiseContext__(context):
 	Color_11 = pgl.Texture2D(image = PGL_140241087914336 , )
 	Color_11.name = "Color_11"
 	context.turtle.setMaterial(11,Color_11)
-	scalars = [('SEED', 'Integer', 17, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.01, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 2.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1)]
+	scalars = [('SEED', 'Integer', 17, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.01, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 2.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 30, 1, 100)]
 	context["__scalars__"] = scalars
 	for s in scalars:
 		if not s[1] == "Category" : context[s[0]] = s[2]
@@ -197,7 +202,12 @@ def __initialiseContext__(context):
 	    ctrlPointList = pgl.Point3Array([(0, 0.05, 1),(0.515152, 0.536364, 1),(0.60303, 0.431818, 1),(1, 0.0318182, 1)]) , 
 	    )
 	shortproba.name = "shortproba"
-	panel_0 = ({'active': True, 'visible': True, 'name': 'Panel 1'},[('Curve2D',leafsection),('Curve2D',applesection),('Function',longproba),('Function',shortproba)])
+	import openalea.plantgl.all as pgl
+	leafshape = pgl.NurbsPatch(	
+	    pgl.Point4Matrix([[(-0.0241355, -0.0549754, -0.00804807, 1), (-0.00877065, -0.00933309, 0.00100194, 1), (0.0221632, 0.0405477, -0.00898557, 1), (-0.00223729, -0.00247516, 0.000385988, 1)], [(0.314084, -0.472921, 0.392759, 1), (0.000957513, 0.000400347, 0.33376, 1), (-0.00092555, 0.00517653, 0.332921, 1), (0.408856, 0.483731, 0.413612, 1)], [(0.329337, -0.501345, 0.730665, 1), (0.000326354, 0.0164005, 0.665257, 1), (-0.000118909, 0.019707, 0.66817, 1), (0.414001, 0.558038, 0.74373, 1)], [(0.00223079, 0.0223592, 0.999352, 1), (0.00112035, 0.028812, 1.0005, 1), (-0.000767699, 0.0327184, 0.999658, 1), (-0.0011293, 0.0361733, 1.00279, 1)]]) , 
+	    )
+	leafshape.name = "leafshape"
+	panel_0 = ({'active': True, 'visible': True, 'name': 'Panel 1'},[('Curve2D',leafsection),('Curve2D',applesection),('Function',longproba),('Function',shortproba),('NurbsPatch',leafshape)])
 	parameterset = [panel_0,]
 	context["__functions__"] = [('longproba',longproba),('shortproba',shortproba),]
 	context["__curves__"] = [('leafsection',leafsection),('applesection',applesection),]
@@ -206,3 +216,4 @@ def __initialiseContext__(context):
 	context["applesection"] = applesection
 	context["longproba"] = pgl.QuantisedFunction(longproba)
 	context["shortproba"] = pgl.QuantisedFunction(shortproba)
+	context["leafshape"] = leafshape
