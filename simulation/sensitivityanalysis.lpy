@@ -10,6 +10,8 @@ seed(SEED)
 from numpy.random import seed
 seed(SEED)
 
+leafshape.ustride = 6
+leafshape.vstride = 6
 
 cdate = None
 prevdate = None
@@ -34,17 +36,22 @@ def StartEach():
   else:
     useGroup(0)
   if cdate.month in range(11,13)+range(1,4):
-    deltatime = max(TIMESTEP,10)
+    deltatime = max(TIMESTEP,30)
   else:
     deltatime = TIMESTEP
   prevdate = cdate
   cdate += timedelta(days=deltatime)
 
 
-def EndEach():
-  print 'Total Leaf Area :',totalleafarea,' for ', totalleafnb,'leaves.'
+def EndEach(lstring, lscene):
+  if isFrameDisplayed():
+    print 'Total Leaf Area :',totalleafarea,' for ', totalleafnb,'leaves.'
+    
+    if LIGHTON:
+      # run caribu 
+      return myscene
 
-initial_view = 150
+initial_view = 20
 
 branchingmatrixtype = estimatebranchingmatrixtype(LONGGU_PEAK_POSITION, 1, 0.3) 
 
@@ -65,7 +72,8 @@ def init_meristem(gufate, gutype, parentdate = None, parentlength = None):
   p = ParameterSet(gutype = gutype,
                    gufate = gufate,
                    mp = MetamerProduction(metamerprodrate, nbmetamer),
-                   init_date = init_date)
+                   init_date = init_date,
+                   processed_date = init_date - timedelta(days=1))
   return p
 
 
@@ -74,14 +82,14 @@ Axiom:
   nproduce  Meristem(init_meristem(Proleptic, TrunkGU))
   produce SimuInfo
 
-derivation length: 600
+derivation length: int(360./TIMESTEP)
 production:
 group 0:
-#decomposition:
-#maximum depth: 10
+decomposition:
+maximum depth: 10
 Meristem(p):
-  print 'Meristem', p.init_date, cdate
-  if p.init_date <= cdate:
+  if p.processed_date < cdate:
+    p.processed_date = cdate
     previousnbmetamer = p.mp.nbmetamer
     nbnewmetamer = p.mp.accumulate_range(p.init_date, cdate)
     for i in xrange(nbnewmetamer):
@@ -155,7 +163,7 @@ Leaf(p) :
 
 
 Flower(t) :
-  nproduce [ F(3) ,(11) &(90) TextureScale(1) @o(5)]
+  nproduce [ F(3) ,(11) &(90) TextureScale(1) @o(3)]
 
 Fruit :
   nproduce [ @v @h &(90) @Tp(0,0,-1) @Ts(0.1) ,(2) _(0.05) nF(1,0.1)  ,(3) f(1.5) @g(Revolution(applesection),3) ]
@@ -180,7 +188,7 @@ def __initialiseContext__(context):
 	Color_11 = pgl.Texture2D(image = PGL_140241087914336 , )
 	Color_11.name = "Color_11"
 	context.turtle.setMaterial(11,Color_11)
-	scalars = [('SEED', 'Integer', 17, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.01, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 2.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 30, 1, 100)]
+	scalars = [('SEED', 'Integer', 17, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.06, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 2.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 1, 1, 100), ('LIGHTON', 'Bool', True)]
 	context["__scalars__"] = scalars
 	for s in scalars:
 		if not s[1] == "Category" : context[s[0]] = s[2]
