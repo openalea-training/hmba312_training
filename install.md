@@ -14,7 +14,8 @@ If you have not yet installed conda on your computer, follow these instructions:
 #### Windows, Linux, Mac
 
 Create an environment named *openalea*:
-
+    
+    Launch a console (cmd.exe on windows)
     conda create -n openalea -c openalea openalea.plantgl openalea.lpy
 
 Activate the *openalea* environment:
