@@ -26,36 +26,54 @@ def Start():
 totalleafarea = 0
 totalleafnb = 0
 
+def increment_date(timestep = 1):
+    global cdate, prevdate
+    mrange = range(9,13)+range(1,4)
+    if not FULLPLANT and cdate.year == 2010:
+      mrange += range(7,9)
+    if cdate.month in mrange:
+      deltatime = max(timestep,30)
+    else:
+      deltatime = timestep
+    prevdate = cdate
+    cdate += timedelta(days=deltatime)
+
 def StartEach():
-  global cdate, prevdate, totalleafarea, totalleafnb 
+  global cdate, prevdate, totalleafarea, totalleafnb
+  totalleafarea, totalleafnb = 0, 0
   if cdate.year == 2011 and cdate.month >= 6:
-    if getIterationNb() %2 == 0:  
+    if getIterationNb() % 2 == 0:
+      useGroup(2)
+      totaldemand, totalsupply = 0, 0
+      for c in allcarbonpools:
+        totaldemand += c.demand
+        totalsupply += c.supply
+        # c.photosynthesis = c.demand / max(c.supply,0.05)
+      photosynthesis = totaldemand /  totalsupply
+      for c in allcarbonpools:
+        c.photosynthesis = photosynthesis
+    else:
       useGroup(0)
       for c in allcarbonpools:
-        c.demand = 0
+        #c.demand = 0
         c.supply = 0
-     else:
-       useGroup(2)
-       
+      increment_date(GROWTHDELAY)
+      
   else:
-    totalleafarea, totalleafnb = 0, 0
     if cdate.month == 12:
       useGroup(3)
     else:
       useGroup(0)
-      
-    if cdate.month in range(9,13)+range(1,4):
-      deltatime = max(TIMESTEP,30)
-    else:
-      deltatime = TIMESTEP
-    prevdate = cdate
-    cdate += timedelta(days=deltatime)
+    increment_date()
+    
     
 
 
 def EndEach():
   pass 
   #print 'Total Leaf Area :',totalleafarea,' for ', totalleafnb,'leaves.'
+  if cdate.year == 2011 and cdate.month == 9:
+    Stop()
 
 initial_view = 1
 
@@ -71,6 +89,11 @@ branchingmatrixtype = normalize([
     [0.15,0.7,0.5],
     [0.4,0.6,0]
 ])
+
+successionmatrix = [[0.6,  0.0,  0.4],
+                    [0.35, 0.25, 0.4],
+                    [0.5, 0.5,  0]
+                   ]
 
 module Meristem
 module Leaf
@@ -90,34 +113,43 @@ def init_meristem(gufate, gutype, parentdate = None, parentlength = None):
   p = ParameterSet(gutype = gutype,
                    gufate = gufate,
                    mp = MetamerProduction(metamerprodrate, nbmetamer),
-                   init_date = init_date)
+                   init_date = init_date,
+                   zonepool = None)
   return p
 
 
 allcarbonpools = []
 
-def init_carbon():
-  global allcarbonpools
-  p =  ParameterSet(supply=0, demand=0)
-  allcarbonpools.append(p)
-  return p
+def init_carbon(order, parentpool = None):
+  global allcarbonpools, gpool
+  if order <= POOLORDER or parentpool is None:
+    p =  ParameterSet(supply=0, demand=0, colorid = len(allcarbonpools))
+    allcarbonpools.append(p)
+    return p
+  else:
+    return parentpool
 
 
 Axiom:
-  trunkc = init_carbon()
-  for i in xrange(20):
-    nproduce Internode(ParameterSet(length=INTERNODE_FLENGTH, finallength = INTERNODE_FLENGTH, width=0.5, ttime = 1000), trunkc)
-  nproduce [ &(INSERTION_ANGLE) @Tp(0,0,-1) @Ts(BRANCH_ELASTICITY) Meristem(init_meristem(Sylleptic, LongGU, cdate, 30), init_carbon()) ]
-  for i in xrange(10):
-    nproduce Internode(ParameterSet(length=INTERNODE_FLENGTH, finallength = INTERNODE_FLENGTH, width=0.5, ttime = 1000), trunkc)
-  #nproduce  Meristem(init_meristem(Proleptic, TrunkGU))
+  trunkc = init_carbon(0)
+  if FULLPLANT:
+    nproduce  Meristem(0, init_meristem(Proleptic, TrunkGU), trunkc)
+  else:
+    for i in xrange(20):
+        nproduce Internode(ParameterSet(length=INTERNODE_FLENGTH, finallength = INTERNODE_FLENGTH, width=0.5, ttime = 1000), trunkc)
+    nproduce [ &(INSERTION_ANGLE) @Tp(0,0,-1) @Ts(BRANCH_ELASTICITY) Meristem(1, init_meristem(Sylleptic, LongGU, cdate, 30), init_carbon(1,trunkc)) ] 
+    for i in xrange(2):
+        nproduce Internode(ParameterSet(length=INTERNODE_FLENGTH, finallength = INTERNODE_FLENGTH, width=0.5, ttime = 1000), trunkc)
+    nproduce /(PHYLLOTAXY)[ &(INSERTION_ANGLE) @Tp(0,0,-1) @Ts(BRANCH_ELASTICITY) Meristem(1, init_meristem(Sylleptic, LongGU, cdate, 30), init_carbon(1,trunkc)) ]
+    for i in xrange(8):
+      nproduce Internode(ParameterSet(length=INTERNODE_FLENGTH, finallength = INTERNODE_FLENGTH, width=0.5, ttime = 1000), trunkc)
   produce SimuInfo
 
-derivation length: 250
+derivation length: 1000
 production:
 group 0:
 
-Meristem(p, c):
+Meristem(o, p, c):
   if p.init_date <= cdate:
     previousnbmetamer = p.mp.nbmetamer
     nbnewmetamer = p.mp.accumulate_range(p.init_date, cdate)
@@ -130,22 +162,28 @@ Meristem(p, c):
       if ramiffate == Sylleptic and (cdate.year >= 2011 or p.gufate == Sylleptic):
         ramiffate = Proleptic
       if ramiffate != Blind:
-        nproduce [ &(INSERTION_ANGLE) @Tp(0,0,-1) @Ts(BRANCH_ELASTICITY) Meristem(init_meristem(ramiffate, ramiftype, p.init_date, p.mp.nbfinalmetamer), init_carbon()) ]
+        if ZONEPOOL and p.zonepool != None:
+          nc = p.zonepool
+        else:
+          nc =  init_carbon(o+1, c)
+          p.zonepool = nc
+        nproduce [ &(INSERTION_ANGLE) @Tp(0,0,-1) @Ts(BRANCH_ELASTICITY) Meristem(o+1, init_meristem(ramiffate, ramiftype, p.init_date, p.mp.nbfinalmetamer),nc) ]
+      else:
+         p.zonepool = None
     
     if p.mp.nbmetamer < p.mp.nbfinalmetamer:
-      nproduce Meristem(p, c)
+      nproduce Meristem(o, p, c)
     else:
       # succession
       if p.gutype == Inflo:
-        c = init_carbon()
-        nproduce [ &(INSERTION_ANGLE/2) Meristem(init_meristem(Sylleptic, succession(p.gutype), p.init_date, p.mp.nbfinalmetamer), c) ]
+        nproduce [ &(INSERTION_ANGLE/2) Meristem(o, init_meristem(Sylleptic, succession(p.gutype, successionmatrix), p.init_date, 50), c) ]
         produce Flower(0, c)
       else:
         # succession
         if p.gutype == TrunkGU:
           nproduce @Tp(0,0,-1) @Ts(BRANCH_ELASTICITY/2)
         
-        produce Meristem(init_meristem(Proleptic, succession(p.gutype), p.init_date, p.mp.nbfinalmetamer), init_carbon())
+        produce Meristem(o, init_meristem(Proleptic, succession(p.gutype, successionmatrix), p.init_date, p.mp.nbfinalmetamer), c)
           
   
 production:
@@ -173,29 +211,38 @@ Leaf(p, c):
 
 
 Flower(t, c):
-  if t < 30: produce Flower(t+1, c)
-  else : produce Fruit(ParameterSet(size = 0.1, potentialsize = 0.1, ttime = 0), c)
+  if cdate.year == 2011 and cdate.month == 6 and cdate.day == 1: 
+      produce Fruit(ParameterSet(size = 0.1, potentialsize = 0.1, ttime = 0, demand =0), c)
+  else : 
+    produce Flower(t+1, c)
 
 Fruit(p,c):
   cttime = sum(mthermaltime.get_effective_temperatures(prevdate, cdate))
   p.ttime += cttime
   previouspot = p.potentialsize  
-  p.potentialsize = growth_logistic(p.ttime, 3, 550, 200.)
-  p.demand = p.potentialsize - previouspot
-  p.size = p.potentialsize
-  c.demand += p.demand
+  p.potentialsize = growth_logistic(p.ttime, 5, 550, 200.)
+  daydemand = p.potentialsize - previouspot
+  p.demand += daydemand
+  c.demand += daydemand
+  produce Fruit(p,c)
 
 group 2:
 
 Fruit(p,c):
-  cttime = sum(mthermaltime.get_effective_temperatures(prevdate, cdate))
-  p.ttime += cttime
-  previouspot = p.potentialsize  
-  p.potentialsize = growth_logistic(p.ttime, 3, 550, 200.)
-  p.demand = p.potentialsize - previouspot
-  p.size = p.potentialsize
-  c.demand += p.demand
-  
+  gusupply = c.supply * c.photosynthesis
+  if gusupply < c.demand:
+    p.size += gusupply* p.demand/c.demand
+  else:
+    p.size += p.demand
+  p.demand = 0
+  produce Fruit(p,c)
+
+Leaf(p, c):
+  global totalleafarea, totalleafnb
+  totalleafarea += p.area
+  totalleafnb += 1
+  produce Leaf(p, c)
+
 group 3:
 
 Leaf(p, c) --> %
@@ -211,17 +258,21 @@ Leaf(p, c) :
   if p.area > 0:
     width = sqrt(p.area / 1.4)
     length = 2 * width
-    produce ,(10)  @g(leafshape, width) # SetContour(leafsection) TextureVScale(1./length) _(width/2) F(length)
+    color = (c.colorid % 20)
+    if color % 2 == 0:
+      color = 20-color
+    produce ,(20+color)   @g(leafshape, width) # SetContour(leafsection) TextureVScale(1./length) _(width/2) F(length)
 
 
 Flower(t, c) :
-  nproduce [ F(3) ,(11) &(90) TextureScale(1) @o(5)]
+  nproduce [ F(3) ,(11) &(90) TextureScale(1) @o(3)]
 
 Fruit(p, c) :
-  nproduce [ @v @h &(90) @Tp(0,0,-1) @Ts(0.1) ,(2) _(0.05) nF(1,0.1)  ,(3) f(1.5) @g(Revolution(applesection),p.size) ]
+  nproduce [ @v @h &(90) @Tp(0,0,-1) @Ts(0.1) ,(2) _(0.05) nF(1,0.1)  ,(3) f(p.size/2) @g(Revolution(applesection),p.size) [| f(5) Label('%.0f' % (p.size*60), 20) ] ]
+  nproduce 
 
 SimuInfo:
-  produce [@2D @M(0.8,0.8) @L(str(cdate))]
+  produce [@2D @M(0.8,0.8) @L(str(cdate), 20)]
 
 endlsystem
 ###### INITIALISATION ######
@@ -240,7 +291,70 @@ def __initialiseContext__(context):
 	Color_11 = pgl.Texture2D(image = PGL_140241087914336 , )
 	Color_11.name = "Color_11"
 	context.turtle.setMaterial(11,Color_11)
-	scalars = [('SEED', 'Integer', 0, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.01, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 2.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 1, 1, 100)]
+	Color_20 = pgl.Material("Color_20" , ambient = (11,0,80) , )
+	Color_20.name = "Color_20"
+	context.turtle.setMaterial(20,Color_20)
+	Color_21 = pgl.Material("Color_21" , ambient = (0,7,78) , diffuse = 2.03881 , )
+	Color_21.name = "Color_21"
+	context.turtle.setMaterial(21,Color_21)
+	Color_22 = pgl.Material("Color_22" , ambient = (0,24,77) , diffuse = 2.07761 , )
+	Color_22.name = "Color_22"
+	context.turtle.setMaterial(22,Color_22)
+	Color_23 = pgl.Material("Color_23" , ambient = (0,41,76) , diffuse = 2.11642 , )
+	Color_23.name = "Color_23"
+	context.turtle.setMaterial(23,Color_23)
+	Color_24 = pgl.Material("Color_24" , ambient = (0,57,74) , diffuse = 2.15522 , )
+	Color_24.name = "Color_24"
+	context.turtle.setMaterial(24,Color_24)
+	Color_25 = pgl.Material("Color_25" , ambient = (0,72,73) , diffuse = 2.19403 , )
+	Color_25.name = "Color_25"
+	context.turtle.setMaterial(25,Color_25)
+	Color_26 = pgl.Material("Color_26" , ambient = (0,72,56) , diffuse = 2.23284 , )
+	Color_26.name = "Color_26"
+	context.turtle.setMaterial(26,Color_26)
+	Color_27 = pgl.Material("Color_27" , ambient = (0,70,39) , diffuse = 2.27164 , )
+	Color_27.name = "Color_27"
+	context.turtle.setMaterial(27,Color_27)
+	Color_28 = pgl.Material("Color_28" , ambient = (0,69,23) , diffuse = 2.31045 , )
+	Color_28.name = "Color_28"
+	context.turtle.setMaterial(28,Color_28)
+	Color_29 = pgl.Material("Color_29" , ambient = (0,68,7) , diffuse = 2.34925 , )
+	Color_29.name = "Color_29"
+	context.turtle.setMaterial(29,Color_29)
+	Color_30 = pgl.Material("Color_30" , ambient = (9,67,1) , diffuse = 2.38806 , )
+	Color_30.name = "Color_30"
+	context.turtle.setMaterial(30,Color_30)
+	Color_31 = pgl.Material("Color_31" , ambient = (27,66,0) , diffuse = 2.44925 , )
+	Color_31.name = "Color_31"
+	context.turtle.setMaterial(31,Color_31)
+	Color_32 = pgl.Material("Color_32" , ambient = (45,65,0) , diffuse = 2.51045 , )
+	Color_32.name = "Color_32"
+	context.turtle.setMaterial(32,Color_32)
+	Color_33 = pgl.Material("Color_33" , ambient = (63,64,0) , diffuse = 2.57164 , )
+	Color_33.name = "Color_33"
+	context.turtle.setMaterial(33,Color_33)
+	Color_34 = pgl.Material("Color_34" , ambient = (64,46,0) , diffuse = 2.63284 , )
+	Color_34.name = "Color_34"
+	context.turtle.setMaterial(34,Color_34)
+	Color_35 = pgl.Material("Color_35" , ambient = (63,28,0) , diffuse = 2.69403 , )
+	Color_35.name = "Color_35"
+	context.turtle.setMaterial(35,Color_35)
+	Color_36 = pgl.Material("Color_36" , ambient = (62,9,0) , diffuse = 2.75522 , )
+	Color_36.name = "Color_36"
+	context.turtle.setMaterial(36,Color_36)
+	Color_37 = pgl.Material("Color_37" , ambient = (62,0,8) , diffuse = 2.81642 , )
+	Color_37.name = "Color_37"
+	context.turtle.setMaterial(37,Color_37)
+	Color_38 = pgl.Material("Color_38" , ambient = (61,0,26) , diffuse = 2.87761 , )
+	Color_38.name = "Color_38"
+	context.turtle.setMaterial(38,Color_38)
+	Color_39 = pgl.Material("Color_39" , ambient = (60,0,43) , diffuse = 2.93881 , )
+	Color_39.name = "Color_39"
+	context.turtle.setMaterial(39,Color_39)
+	Color_40 = pgl.Material("Color_40" , ambient = (60,0,60) , diffuse = 3 , )
+	Color_40.name = "Color_40"
+	context.turtle.setMaterial(40,Color_40)
+	scalars = [('SEED', 'Integer', 63, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.01, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 2.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 1, 1, 100), ('ZONEPOOL', 'Bool', True), ('FULLPLANT', 'Bool', False), ('GROWTHDELAY', 'Integer', 5, 1, 20), ('POOLORDER', 'Integer', 2, 0, 2)]
 	context["__scalars__"] = scalars
 	for s in scalars:
 		if not s[1] == "Category" : context[s[0]] = s[2]

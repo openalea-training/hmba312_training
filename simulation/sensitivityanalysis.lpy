@@ -49,7 +49,8 @@ def EndEach(lstring, lscene):
     
     if LIGHTON:
       # run caribu 
-      return myscene
+      #return myscene
+      pass
 
 initial_view = 20
 
@@ -79,7 +80,13 @@ def init_meristem(gufate, gutype, parentdate = None, parentlength = None):
 
 
 Axiom:
-  nproduce  Meristem(init_meristem(Proleptic, TrunkGU))
+  if not ORCHARD:
+    nproduce  Meristem(init_meristem(Proleptic, TrunkGU))
+  else:
+    for i in xrange(2):
+      for j in xrange(5):
+        nproduce  [ @M(300*i,150*j,0) Meristem(init_meristem(Proleptic, TrunkGU))]
+        
   produce SimuInfo
 
 derivation length: int(360./TIMESTEP)
@@ -188,7 +195,7 @@ def __initialiseContext__(context):
 	Color_11 = pgl.Texture2D(image = PGL_140241087914336 , )
 	Color_11.name = "Color_11"
 	context.turtle.setMaterial(11,Color_11)
-	scalars = [('SEED', 'Integer', 17, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.06, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 2.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 1, 1, 100), ('LIGHTON', 'Bool', True)]
+	scalars = [('SEED', 'Integer', 17, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.06, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 3.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 1, 1, 100), ('LIGHTON', 'Bool', False), ('ORCHARD', 'Bool', True)]
 	context["__scalars__"] = scalars
 	for s in scalars:
 		if not s[1] == "Category" : context[s[0]] = s[2]
