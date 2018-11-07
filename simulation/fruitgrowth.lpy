@@ -43,7 +43,7 @@ def StartEach():
   totalleafarea, totalleafnb = 0, 0
   if cdate.year == 2011 and cdate.month >= 6:
     if getIterationNb() % 2 == 0:
-      useGroup(2)
+      useGroup(4)
       totaldemand, totalsupply = 0, 0
       for c in allcarbonpools:
         totaldemand += c.demand
@@ -63,7 +63,7 @@ def StartEach():
     if cdate.month == 12:
       useGroup(3)
     else:
-      useGroup(0)
+      useGroup(2 if getIterationNb() % 3 == 0 else 0)
     increment_date()
     
     
@@ -129,6 +129,8 @@ def init_carbon(order, parentpool = None):
   else:
     return parentpool
 
+radiusexponent = 0.27
+
 
 Axiom:
   trunkc = init_carbon(0)
@@ -187,6 +189,23 @@ Meristem(o, p, c):
           
   
 production:
+
+group 2:
+consider: Internode, Meristem
+Internode(p) >> []  x([Internode(pb)]) x([Meristem(pm)]) x(Internode(pa),1) :
+  p.nbchildren = sum([pi.nbchildren for pi in pb])+sum([pi.nbchildren for pi in pa])+1
+  
+  cttime = mthermaltime.get_effective_temperature(cdate)
+  p.ttime += cttime
+  
+  p.length = growth_logistic(p.ttime, p.finallength, tip_internode, b_internode)
+    
+  width = InternodeRadius * pow(p.nbchildren, radiusexponent)
+  p.width = growth_logistic(p.ttime, width, tip_internode, b_internode)
+  
+  produce Internode(p)
+
+group 0:
 Internode(p, c) :
   cttime = mthermaltime.get_effective_temperatures(prevdate, cdate)
   p.ttime += sum(cttime)
@@ -195,6 +214,9 @@ Internode(p, c) :
   p.width = growth_logistic(p.ttime, InternodeRadius, tip_internode, b_internode)
   
   produce Internode(p, c)
+
+
+
 
 Leaf(p, c):
   global totalleafarea, totalleafnb
@@ -220,14 +242,13 @@ Fruit(p,c):
   cttime = sum(mthermaltime.get_effective_temperatures(prevdate, cdate))
   p.ttime += cttime
   previouspot = p.potentialsize  
-  p.potentialsize = growth_logistic(p.ttime, 5, 550, 200.)
+  p.potentialsize = growth_logistic(p.ttime, 8, 550, 200.)
   daydemand = p.potentialsize - previouspot
   p.demand += daydemand
   c.demand += daydemand
   produce Fruit(p,c)
 
-group 2:
-
+group 4:
 Fruit(p,c):
   gusupply = c.supply * c.photosynthesis
   if gusupply < c.demand:
@@ -261,7 +282,7 @@ Leaf(p, c) :
     color = (c.colorid % 20)
     if color % 2 == 0:
       color = 20-color
-    produce ,(20+color)   @g(leafshape, width) # SetContour(leafsection) TextureVScale(1./length) _(width/2) F(length)
+    produce ,(20+color)   @g(leafshape, length) # SetContour(leafsection) TextureVScale(1./length) _(width/2) F(length)
 
 
 Flower(t, c) :
@@ -354,7 +375,7 @@ def __initialiseContext__(context):
 	Color_40 = pgl.Material("Color_40" , ambient = (60,0,60) , diffuse = 3 , )
 	Color_40.name = "Color_40"
 	context.turtle.setMaterial(40,Color_40)
-	scalars = [('SEED', 'Integer', 63, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.01, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 2.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 1, 1, 100), ('ZONEPOOL', 'Bool', True), ('FULLPLANT', 'Bool', False), ('GROWTHDELAY', 'Integer', 5, 1, 20), ('POOLORDER', 'Integer', 2, 0, 2)]
+	scalars = [('SEED', 'Integer', 63, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.01, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 3.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 1, 1, 100), ('ZONEPOOL', 'Bool', True), ('FULLPLANT', 'Bool', False), ('GROWTHDELAY', 'Integer', 5, 1, 20), ('POOLORDER', 'Integer', 2, 0, 2)]
 	context["__scalars__"] = scalars
 	for s in scalars:
 		if not s[1] == "Category" : context[s[0]] = s[2]
