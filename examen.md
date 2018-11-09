@@ -25,3 +25,11 @@ Estimating wheat green area index from ground-based LiDAR measurement using a 3D
 
 * Guillaume Garin Christophe Pradal Christian Fournier David Claessen Vianney Houlès Corinne Robert (2018). Modelling interaction dynamics between two foliar pathogens in wheat: a multi-scale approach. Annals of Botany. 121: 927–940
      - Quel est l'intérêt de la modélisation pour analyser les intéractions plante-pathogène ?
+
+* Picheny V., Casadebaig P., Trepos R., Faivre R., Da Silva D., Vincourt P., Costes E. 2017. Using numerical plant models and phenotypic correlation space to design achievable ideotypes Early online Plant Cell and Environment. https://doi.org/10.1111/pce.13001
+
+     - Comment un FSPM peut il contribuer à l'évaluation de l'impact de l'organisation architecturale (ramification et distribution spatiale du feuillage) et de sa variation génétique sur l'interception lumineuse? Quelles sont les précautions à prendre dans le processus de recherche d'idéotype pour ce caractère ?
+
+     - Da Silva D., Han L, Costes E. 2014. Light interception efficiency of Apple trees: a multiscale computation study based on MAppleT. Ecological Modelling 290:45-53. http://dx.doi.org/10.1016/j.ecolmodel.2013.12.001
+
+     -  Martin, T. A., Johnsen, K. H., & White, T. L. (2001). Ideotype development in southern pines: rationale and strategies for overcoming scale-related obstacles. Forest Science, 47(1), 21-28.
