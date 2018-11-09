@@ -10,3 +10,7 @@ def process(params = {'INSERTION_ANGLE' : 45 }):
     totalleafarea = l.totalleafarea
     totalleafnb = l.totalleafnb
     return totalleafarea, totalleafnb
+
+
+if __name__ == '__main__':
+    process()

@@ -28,6 +28,8 @@ Install the different packages
 
     conda install -c openalea -c conda-forge pvlib-python alinea.astk
 
+    conda install nbformat
+
 ## Installation of R & co
 
 You can install everything by yourself, or using the r channel in conda.
