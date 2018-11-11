@@ -14,14 +14,15 @@ If you have not yet installed conda on your computer, follow these instructions:
 #### Windows, Linux, Mac
 
 Create an environment named *openalea*:
+Launch a console (See Anaconda Prompt in Start menu on windows)
     
-    Launch a console (cmd.exe on windows)
     conda create -n openalea -c openalea openalea.plantgl openalea.lpy
 
 Activate the *openalea* environment:
 
     [source] activate openalea
 
+source should be written only on linux and macos.
 Install the different packages
 
     conda install notebook matplotlib pandas nbformat
@@ -29,6 +30,14 @@ Install the different packages
     conda install -c openalea openalea.mtg alinea.caribu openalea.plantscan3d openalea.visualea 
 
     conda install -c openalea -c conda-forge pvlib-python alinea.astk
+    conda install git
+
+## Installation of the training material
+
+In a convenient directory, you will now download the training material using the following commands.
+
+    cd /path/to/your/documents
+    git clone https://github.com/openalea/hbma312_training_2018.git
 
 
 ## Installation of R & co
