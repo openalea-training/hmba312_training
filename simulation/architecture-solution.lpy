@@ -47,7 +47,7 @@ def init_meristem(gutype, parentdate = None):
     gutype = set_proleptic(gutype) # SyllepticLong become Long, etc.
   else:
     init_date = date(parentdate.year+1, 4, 1)
-  assert gutype in [ShortGU, MediumGU, LongGU, Inflo, TrunkGU]
+  assert gutype in [ShortGU, LongGU, Inflo, TrunkGU]
   nbmetamer = growth_unit_length(gutype)
   p = ParameterSet(gutype = gutype,
                    mp = MetamerProduction(metamerprodrate, nbmetamer),
