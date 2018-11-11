@@ -11,7 +11,7 @@ def init_temperatures(filename = 'meteo.csv'):
         temperature_data = read_csv(filename,delimiter=';')
         
         __temperatures = temperature_data['T']
-        __first_day = date(temperature_data['Year'][0], 1 , 1) + timedelta( temperature_data['DOY'][0] -1  )
+        __first_day = date(temperature_data['Year'][0], 1 , 1) + timedelta( int(temperature_data['DOY'][0]) -1  )
 
 
 
