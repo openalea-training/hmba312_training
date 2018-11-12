@@ -25,12 +25,11 @@ Activate the *openalea* environment:
 source should be written only on linux and macos.
 Install the different packages
 
-    conda install notebook matplotlib pandas nbformat
+    conda install notebook=5.4 matplotlib pandas nbformat git
 
     conda install -c openalea openalea.mtg alinea.caribu openalea.plantscan3d openalea.visualea 
 
     conda install -c openalea -c conda-forge pvlib-python alinea.astk
-    conda install git
 
 ## Installation of the training material
 

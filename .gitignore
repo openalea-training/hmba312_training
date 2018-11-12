@@ -31,6 +31,7 @@ lib
 lib64
 __pycache__
 *.pth
+.pynb_checkpoints
 
 # Installer logs
 pip-log.txt
