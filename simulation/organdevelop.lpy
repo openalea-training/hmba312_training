@@ -30,19 +30,29 @@ derivation length: 100
 production:
 
 Internode(p) :
+  
   # Use mthermaltime to get the effective temperature of the day 
   # and store it in variable ctime.
-  # Accumulate it into variable p.ttime.
+  cttime = mthermaltime.get_effective_temperature(cdate)
+  
   # Compute length increment with growth_rate function. 
   # Parameterize it with p.finallength, tip_internode and b_internode.
-  # Integrate grow rate on ctime to have length increase. 
+  # Integrate growth_rate on ctime to have length increase. 
   # Add it to p.length variable
+  
+  # p.length += ... to complete
+  
   # Do the same on the width variable
+  # p.width += ... to complete
+  
+  # Accumulate thermal time into variable p.ttime.
+  p.ttime += cttime
   
   produce Internode(p)
 
 Leaf(p):
   # Similar approach than with Internode but apply it for the growth of area
+  # Use variable p.finalarea, tip_leaf, b_leaf to parameterize growth_rate function
   
   produce Leaf(p)
 
