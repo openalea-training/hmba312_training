@@ -38,13 +38,13 @@
 ## Jeudi 15
 
 * 9h - 12h :
-   - Modèles de lumière, RUE et de photosynthèse - Christian Fournier, Raphaël Perez
-   - TP modèles de lumière et analyse de sensibilité
+   - Simulation de processus écophysiologiques - Benoît Pallas
+   - TP et exercices d'application  - Benoît Pallas, Frédéric Boudon
 
 ## Vendredi 16
 
-* 9h - 12h :
-   - Simulation de processus écophysiologiques - Benoît Pallas
-   - TP et exercices d'application  - Benoît Pallas, Raphaël Perez, Frédéric Boudon
+* 14h - 17h :
+   - Modèles de lumière, RUE et de photosynthèse - Christian Fournier, Raphaël Perez
+   - TP modèles de lumière et analyse de sensibilité
 
 
