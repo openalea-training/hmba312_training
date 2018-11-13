@@ -30,7 +30,7 @@ totalleafnb = 0
 
 def StartEach():
   global cdate, prevdate, totalleafarea, totalleafnb 
-  
+  # print 'iteration' ,getIterationNb()
   backward()
   totalleafarea, totalleafnb = 0, 0
   if cdate.month == 12:
@@ -63,6 +63,7 @@ module Meristem
 module Leaf
 module Internode
 module SimuInfo
+module Fruit
 
 def init_meristem(gufate, gutype, parentdate = None, parentlength = None):
   if parentdate is None:
