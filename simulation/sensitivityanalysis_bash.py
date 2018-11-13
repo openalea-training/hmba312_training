@@ -1,4 +1,7 @@
 import pandas
+import multiprocessing
+import sys
+
 from openalea.lpy import Lsystem
 from alinea.astk.sun_and_sky import sun_sky_sources, sky_sources
 from alinea.caribu.CaribuScene import CaribuScene
@@ -17,7 +20,7 @@ _lsys_params = {'SEED': 17, 'INSERTION_ANGLE' : 45 , 'PHYLLOTAXY': 144, 'BRANCH_
                       'ORCHARD': False}
 
 
-def illuminate(lscene, isolated=True, density=9, clear_sky=False, daydate=_daydate, longitude=_longitude, latitude=_latitude,
+def illuminate(lscene, isolated=True, clear_sky=False, daydate=_daydate, longitude=_longitude, latitude=_latitude,
                altitude=_altitude, timezone=_timezone):
     """ Illuminate a plant
     Args:
@@ -45,8 +48,8 @@ def illuminate(lscene, isolated=True, density=9, clear_sky=False, daydate=_dayda
         sun, sky = sun_sky_sources(daydate=daydate, longitude=longitude, latitude=latitude, altitude=altitude,
                                    timezone=timezone, normalisation=1)
         light = light_sources(*sun) + light_sources(*sky)
-    inter_row = 80
-    inter_plant = 1. / density / (inter_row / 100.) * 100
+    inter_row = 300
+    inter_plant = 150
     pattern = (-0.5 * inter_row, -0.5 * inter_plant,
                0.5 * inter_row, 0.5 * inter_plant)
     cs = CaribuScene(lscene, light=light, pattern=pattern, scene_unit='cm')
@@ -59,7 +62,7 @@ def illuminate(lscene, isolated=True, density=9, clear_sky=False, daydate=_dayda
 # ('INTERNODE_FLENGTH', 'Float', 3.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1),
 # ('TIMESTEP', 'Integer', 1, 1, 100), ('LIGHTON', 'Bool', False), ('ORCHARD', 'Bool', False)]
 
-def process(**kwds):
+def run_lsys(**kwds):
     params={k:v for k,v in _lsys_params.iteritems()}
     params.update(kwds)
     l = Lsystem('sensitivityanalysis.lpy', params)
@@ -79,7 +82,110 @@ def plant_irradiance(lstring, lscene, isolated=True, illuminated=None):
     for lab in set(df.label):
         dfl = df.loc[df.label==lab,:]
         area = dfl.area.sum()
-        ei = sum(df.Ei * df.area) / area
+        ei = sum(dfl.Ei * dfl.area) / area
         res[lab + '_area'] = area
         res[lab + '_Ei'] = ei
     return res
+
+def run_sim(row, **kwds):
+    lstring, lscene = run_lsys(**row.to_dict())
+    res = plant_irradiance(lstring, lscene, **kwds)
+    for k in res:
+        row[k] = res[k]
+    for arg in kwds:
+        row[arg] = kwds[arg]
+    return row
+
+def run_sim_xrun(xargs):
+    row, kwds = xargs
+    return run_sim(row, **kwds)
+
+# ==============================================================================
+# ==============================================================================
+
+def process(path_input=None, path_output=None, nb_process=1,
+            start=None, end=None, df_input=None, **kwds):
+
+    if df_input is None:
+        if path_input is not None:
+            df_input = pandas.read_csv(path_input)
+        else:
+            df_input = pandas.DataFrame({'INSERTION_ANGLE' : [45,60] , 'BRANCH_ELASTICITY': [0.04, 0.06]})
+
+    rows = [row for index, row in df_input.iterrows()]
+
+    if start is None:
+        start = 0
+    if end is None:
+        end = len(rows)
+    rows = rows[start:end]
+
+    df_output = pool_function(rows, nb_process=nb_process, **kwds)
+
+    if path_output is not None:
+        df_output.to_csv(path_output)
+
+    return df_output
+
+
+def pool_function(rows, nb_process=2, verbose=True, **kwds):
+
+    if nb_process <= 1:
+        function = run_sim
+        return run_function(function, rows, verbose=verbose, **kwds)
+
+    function = run_sim_xrun
+    pool = multiprocessing.Pool(nb_process)
+
+    nb_rows = len(rows)
+    df = pandas.DataFrame()
+    args = [(row, kwds) for row in rows]
+    for i, row in enumerate(pool.imap(function, args)):
+
+        if verbose:
+            print("%s : %d / %d" % (function.__name__, i, nb_rows))
+            sys.stdout.flush()
+
+        if row is not None:
+            df = df.append(row)
+
+    pool.close()
+    pool.join()
+
+    if verbose:
+        print("%s : %d / %d" % (function.__name__, nb_rows, nb_rows))
+        sys.stdout.flush()
+
+    return df
+
+
+def run_function(function, rows, verbose=True, **kwds):
+    nb_rows = len(rows)
+    df = pandas.DataFrame()
+    for i, row in enumerate(rows):
+
+        if verbose:
+            print("%s : %d / %d" % (function.__name__, i, nb_rows))
+            sys.stdout.flush()
+
+        row = function(row, **kwds)
+        if row is not None:
+            df = df.append(row)
+
+    if verbose:
+        print("%s : %d / %d" % (function.__name__, nb_rows, nb_rows))
+        sys.stdout.flush()
+
+    return df
+
+
+# ==============================================================================
+# ==============================================================================
+
+if __name__ == '__main__':
+    # exp='ZA16'
+    if len(sys.argv) > 1:
+        # modulor config
+        _, input, output, isolated, nbproc = sys.argv
+        nbproc = int(nbproc)
+        process(path_input=input, path_output=output, nb_process=nbproc, isolated=eval(isolated))
