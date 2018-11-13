@@ -23,8 +23,7 @@ Leaf(p) :
   if p.area > 0:
     width = sqrt(p.area / 1.4)
     length = 2 * width
-    produce ,(10)  SetContour(leafsection) TextureVScale(1./length) _(width/2) F(length)
-
+    produce 
 
 Flower(t) :
   nproduce [ F(3) ,(11) &(90) TextureScale(1) @o(5)]
@@ -40,9 +39,10 @@ __lpy_code_version__ = 1.1
 
 def __initialiseContext__(context):
 	import openalea.plantgl.all as pgl
-	PGL_140490260427792 = pgl.ImageTexture("PGL_140490260427792" , "./flower-small.png" , )
-	PGL_140490260427792.name = "PGL_140490260427792"
-	Color_11 = pgl.Texture2D(image = PGL_140490260427792 , )
+	Color_10 = pgl.Material("Color_10" , ambient = (30,60,10) , diffuse = 3 , )
+	Color_10.name = "Color_10"
+	context.turtle.setMaterial(10,Color_10)
+	Color_11 = pgl.Material("Color_11" , ambient = (60,60,15) , diffuse = 3 , )
 	Color_11.name = "Color_11"
 	context.turtle.setMaterial(11,Color_11)
 	import openalea.plantgl.all as pgl
