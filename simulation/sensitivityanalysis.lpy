@@ -6,9 +6,9 @@ from math import *
 from openalea.plantgl.all import Revolution
 
 from random import seed
-seed(SEED)
+seed(int(SEED))
 from numpy.random import seed
-seed(SEED)
+seed(int(SEED))
 
 leafshape.ustride = 6
 leafshape.vstride = 6

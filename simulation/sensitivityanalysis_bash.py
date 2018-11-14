@@ -2,6 +2,7 @@ import pandas
 import multiprocessing
 import sys
 
+import openalea.plantgl.all as pgl
 from openalea.lpy import Lsystem
 from alinea.astk.sun_and_sky import sun_sky_sources, sky_sources
 from alinea.caribu.CaribuScene import CaribuScene
@@ -70,6 +71,23 @@ def run_lsys(**kwds):
     lscene = l.sceneInterpretation(lstring)
     return lstring, lscene
 
+
+def load_res(output='res_isolated625simus.csv'):
+    return pandas.read_csv(output, index_col=0)
+
+def display_res(df, irow=0, light=False):
+    row = df.iloc[irow,]
+    parname = _lsys_params.keys()
+    output = ['Fruit_Ei', 'Fruit_area', 'Leaf_Ei', 'Leaf_area', 'Internode_Ei', 'Internode_area']
+    lstring, lscene = run_lsys(**row[row.index[row.index.isin(parname)]].to_dict())
+    if not light:
+        pgl.Viewer.display(lscene)
+    else:
+        kwds = row[row.index[~row.index.isin(parname + output)]].to_dict()
+        cs, raw, agg = illuminate(lscene, **kwds)
+        cs.plot(raw['Ei'], minval=0, maxval=1)
+
+
 def plant_irradiance(lstring, lscene, isolated=True, illuminated=None):
     if illuminated is None:
         _, _, agg = illuminate(lscene, isolated=isolated)
@@ -99,6 +117,8 @@ def run_sim(row, **kwds):
 def run_sim_xrun(xargs):
     row, kwds = xargs
     return run_sim(row, **kwds)
+
+
 
 # ==============================================================================
 # ==============================================================================
