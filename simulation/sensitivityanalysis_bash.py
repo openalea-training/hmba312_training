@@ -88,9 +88,9 @@ def display_res(df, irow=0, light=False):
         cs.plot(raw['Ei'], minval=0, maxval=1)
 
 
-def plant_irradiance(lstring, lscene, isolated=True, illuminated=None):
+def plant_irradiance(lstring, lscene, isolated=True, clear_sky=False, illuminated=None):
     if illuminated is None:
-        _, _, agg = illuminate(lscene, isolated=isolated)
+        _, _, agg = illuminate(lscene, isolated=isolated, clear_sky=clear_sky)
     else:
         _, _, agg = illuminated
     labels = {i: mod.name for i,mod in enumerate(lstring) if i in agg['Ei']}
@@ -206,6 +206,6 @@ if __name__ == '__main__':
     # exp='ZA16'
     if len(sys.argv) > 1:
         # modulor config
-        _, input, output, isolated, nbproc = sys.argv
+        _, input, output, isolated, clear, nbproc = sys.argv
         nbproc = int(nbproc)
-        process(path_input=input, path_output=output, nb_process=nbproc, isolated=eval(isolated))
+        process(path_input=input, path_output=output, nb_process=nbproc, isolated=eval(isolated), clear_sky=eval(clear))
