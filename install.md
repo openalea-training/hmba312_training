@@ -16,7 +16,7 @@ If you have not yet installed conda on your computer, follow these instructions:
 Create an environment named *openalea*:
 Launch a console (See Anaconda Prompt in Start menu on windows)
     
-    conda create -n openalea -c openalea openalea.plantgl openalea.lpy
+    conda create -n openalea -c openalea openalea.plantgl openalea.lpy boost=1.66
 
 Activate the *openalea* environment:
 

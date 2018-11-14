@@ -4,11 +4,12 @@ exec(notebook('Apple Tree Simulation - Architecture.ipynb'))
 
 from math import *
 from openalea.plantgl.all import Revolution
+from sensitivityanalysis_bash import plant_irradiance, illuminate
 
 from random import seed
-seed(SEED)
+seed(int(SEED))
 from numpy.random import seed
-seed(SEED)
+seed(int(SEED))
 
 leafshape.ustride = 6
 leafshape.vstride = 6
@@ -51,9 +52,11 @@ def EndEach(lstring, lscene):
     print 'Total Leaf Area :',totalleafarea,' for ', totalleafnb,'leaves.'
     
     if LIGHTON:
-      # run caribu 
-      #return myscene
-      pass
+        cs, raw, agg = illuminate(lscene, isolated=True)
+        res = plant_irradiance(lstring, lscene, illuminated = (cs, raw, agg))
+        print res
+        scene, _ = cs.plot(raw['Ei'], minval=0, maxval=1, display=False)
+        return scene
 
 initial_view = 20
 
@@ -216,7 +219,7 @@ def __initialiseContext__(context):
 	Color_11 = pgl.Material("Color_11" , ambient = (131,127,57) , diffuse = 1.22137 , )
 	Color_11.name = "Color_11"
 	context.turtle.setMaterial(11,Color_11)
-	scalars = [('SEED', 'Integer', 0, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.06, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 3.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 1, 1, 100), ('LIGHTON', 'Bool', False), ('ORCHARD', 'Bool', False)]
+	scalars = [('SEED', 'Integer', 0, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.06, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 3.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 2, 1, 100), ('LIGHTON', 'Bool', False), ('ORCHARD', 'Bool', False)]
 	context["__scalars__"] = scalars
 	for s in scalars:
 		if not s[1] == "Category" : context[s[0]] = s[2]
