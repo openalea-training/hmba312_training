@@ -78,7 +78,8 @@ def load_res(output='res_isolated625simus.csv'):
 def display_res(df, irow=0, light=False):
     row = df.iloc[irow,]
     parname = _lsys_params.keys()
-    output = ['Fruit_Ei', 'Fruit_area', 'Leaf_Ei', 'Leaf_area', 'Internode_Ei', 'Internode_area']
+    output = ['Fruit_Ei', 'Fruit_area', 'Fruit_nb', 'Leaf_Ei', 'Leaf_area', 'Leaf_nb', 'Internode_Ei',
+              'Internode_area', 'Internode_nb']
     lstring, lscene = run_lsys(**row[row.index[row.index.isin(parname)]].to_dict())
     if not light:
         pgl.Viewer.display(lscene)
@@ -103,6 +104,7 @@ def plant_irradiance(lstring, lscene, isolated=True, clear_sky=False, illuminate
         ei = sum(dfl.Ei * dfl.area) / area
         res[lab + '_area'] = area
         res[lab + '_Ei'] = ei
+        res[lab + '_nb'] = len(dfl.area)
     return res
 
 def run_sim(row, **kwds):
