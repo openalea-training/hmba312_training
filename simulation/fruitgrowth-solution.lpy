@@ -244,7 +244,6 @@ Flower(t, c):
 Fruit(p,c):
   cttime = sum(mthermaltime.get_effective_temperatures(prevdate, cdate))
   p.ttime += cttime
-  # Computation of daily demand
   previouspot = p.potentialsize  
   p.potentialsize = growth_logistic(p.ttime, 8, 550, 200.)
   daydemand = p.potentialsize - previouspot
@@ -254,14 +253,11 @@ Fruit(p,c):
 
 group 4:
 Fruit(p,c):
-  # supply provided to the gu
   gusupply = c.supply * c.photosynthesis_ratio
-  # if the gusuply is inferior to the fruit demand
-  #  assign supply in proportion to fruit demand and total pool demand
-  # else assign fruit demand
-  # increment fruit size with assigned supply
-  
-  # reset demand to 0
+  if gusupply < c.demand:
+    p.size += gusupply* p.demand/c.demand
+  else:
+    p.size += p.demand
   p.demand = 0
   produce Fruit(p,c)
 
