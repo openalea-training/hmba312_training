@@ -20,6 +20,7 @@
          - Les notebooks
     - 20min : Questions - FB ou/et CP
     - 1h30 : Exercices (FB, CP, CF, ??)
+         - see the [corresponding notebook](python/Python lecture.ipynb)
 
 * 14h00 - 17h00 : 
     - 45min : L'architecture des plantes - Video - Evelyne Costes (EC)
