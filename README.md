@@ -75,6 +75,8 @@
 
 * 9h - 12h :
    - 45min : Analyse de sensibilité - Raphael Perez (RP)
+     - Plan d'experience
+     - Méthode d'analyse de sensibilité
    - 15min : Questions
    - 2H : TP et exercices d'application  - RP & CF
 
