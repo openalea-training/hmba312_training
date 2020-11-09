@@ -8,6 +8,9 @@ from random import seed
 
 seed(SEED)
 
+leafshape.ustride = 6
+leafshape.vstride = 6
+
 cdate = None
 def initcdate():
   global cdate

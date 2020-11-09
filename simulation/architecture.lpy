@@ -39,6 +39,20 @@ module Leaf
 module Internode
 module SimuInfo
 
+branchingmatrixfate = normalize([
+    [0.4,0.6,0],
+    [0.3,0.7,0],
+    [0.4,0.6,0],
+    [0.7,0.3,0],
+    [0.4,0.25,0.35],
+    [0.4,0.25,0.35],
+    [0.35,0.2,0.45],
+    [0.35,0.3,0.35],
+    [0.3,0.55,0.15],
+    [0.65,0.35,0]
+])
+
+
 def init_meristem(gufate, gutype, parentdate = None, parentlength = None):
   if parentdate is None:
     init_date = date(cdate.year, 4, 1)
@@ -159,7 +173,7 @@ def __initialiseContext__(context):
 	Color_11 = pgl.Material("Color_11" , ambient = (60,60,15) , diffuse = 3 , )
 	Color_11.name = "Color_11"
 	context.turtle.setMaterial(11,Color_11)
-	scalars = [('SEED', 'Integer', 63, 0, 100)]
+	scalars = [('SEED', 'Integer', 0, 0, 100)]
 	context["__scalars__"] = scalars
 	for s in scalars:
 		if not s[1] == "Category" : context[s[0]] = s[2]

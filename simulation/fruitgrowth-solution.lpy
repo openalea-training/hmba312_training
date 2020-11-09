@@ -11,6 +11,10 @@ from numpy.random import seed
 seed(SEED)
 
 
+leafshape.ustride = 6
+leafshape.vstride = 6
+
+
 cdate = None
 prevdate = None
 def initcdate():
