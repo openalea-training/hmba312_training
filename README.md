@@ -6,8 +6,9 @@
 ## Lundi 30/11 : Pre-requis
 
 * 9h - 12h00 : 
-   - 30min : Presentation du module - Frédéric Boudon (FB)
-   - 40min : Initiation à la programmation - Video - FB ou/et Christophe Pradal (CP)
+   - 15min : Presentation du module - Frédéric Boudon (FB)
+   - 15min : La démarche de modélisation - Video - Christophe Pradal (CP)
+   - 40min : Initiation à la programmation - Video - FB ou/et CP
       - Le langage de modélisation Python
          - types
          - control statements
@@ -20,7 +21,7 @@
          - Les notebooks
     - 20min : Questions - FB ou/et CP
     - 1h30 : Exercices (FB, CP, CF, ??)
-         - see the [corresponding notebook](python/Python lecture.ipynb)
+         - see the [corresponding notebook](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/python/Python%20lecture.ipynb)
 
 * 14h00 - 17h00 : 
     - 45min : L'architecture des plantes - Video - Evelyne Costes (EC)
@@ -34,7 +35,8 @@
     - 45min : Phenotypage de l'architecture - Video - FB
     - 15min : Questions - FB
     - 1h : TP Phenotypage de l'architecture : Analyses des données issues du LIDAR - FB & Benoît Pallas (BP)
-
+         - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/laserreconstruction/Reconstruction%20from%20laser%20scans.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/laserreconstruction/Analysis%20of%20laser%20scans.ipynb)
+         
 ## Mardi 01/12 : Modelisation de l'architecture
 
 * 9h - 12h : 
@@ -49,6 +51,7 @@
       - régles sensible à l'environnement
    - 15min - Questions - FB
    - 2h : TP et exercices d’application - FB & BP & CP & ...
+      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/simulation/L-systems.ipynb)
    
 * 14h00 - 17h00 : 
    - 45min : Simulations d’un arbre à reconstruire à partir des règles architecturales - Vidéo - FB
@@ -57,25 +60,26 @@
       - Géométrie des branches (modèle empirique, modèle mécanique)
    - 15min : Questions - FB
    - 2H : TP et exercices d'application - FB & BP & CP & ...
+      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/simulation/Apple%20Tree%20Simulation%20-%20Organs.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/simulation/Apple%20Tree%20Simulation%20-%20Architecture.ipynb)
 
 ## Mercredi 02/12 : Modélisation du fonctionnement
 
 * 9h - 12h : 
-   - 45min : Processus ecophysiologique modulant l'architecture des branches : BP ou EC ?
-   - 15min : Questions
-   - 45min : Modèles de lumière, RUE et de photosynthèse - Christian Fournier (CF)
-   - 15min : Questions
+   - 45min : Processus ecophysiologique modulant l'architecture des branches - Vidéo - BP ou EC ?
+   - 15min : Questions EC et/ou BP
+   - 45min : Modèles de lumière, RUE et de photosynthèse - Vidéo - Christian Fournier (CF)
+   - 15min : Questions CF
    - 1h : TP sur calcul de l'interception et la photosynthèse - CF & ??
 
 * 14h00 - 17h00 : 
-   - 45min : Modèles d'allocation de carbone / de Signalisation - Benoit Pallas
-   - 15min : Questions
+   - 45min : Modèles d'allocation de carbone / de Signalisation - Vidéo - Benoit Pallas
+   - 15min : Questions BP
    - 2h : TP sur modèle d'allocation - BP & FB
 
 ## Jeudi 03/12 : Analyse de sensibilité et Projet
 
 * 9h - 12h :
-   - 45min : Analyse de sensibilité - Raphael Perez (RP)
+   - 45min : Analyse de sensibilité - Vidéo - Raphael Perez (RP)
      - Plan d'experience
      - Méthode d'analyse de sensibilité
    - 15min : Questions
