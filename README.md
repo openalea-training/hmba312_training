@@ -54,7 +54,7 @@
 ## Wednesday 02/12 : Modelling functioning 
 
 * 9h - 12h : 
-   - 45min : Ecophysiological process. From crop model to FSPM  - Vidéo - BP
+   - 45min : Ecophysiological processes. From crop model to FSPM  - Vidéo - BP
         - Light interception, photosynthesis, Carbon Balance, Water Balance
         - Crop vs FSPM approaches
    - 15min : Questions - BP
