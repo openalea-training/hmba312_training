@@ -83,7 +83,7 @@
      - Plan d'experience
      - Méthode d'analyse de sensibilité
    - 15min : Questions
-   - 2H : TP et exercices d'application  - RP & CF
+   - 2H : TP et exercices d'application (exemple du pommier)  - RP & CF
 
 * 14h - 17h : 
    - 2H : Projet de modélisation
