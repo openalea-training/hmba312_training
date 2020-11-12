@@ -1,92 +1,149 @@
-# Module Introduction à la modélisation des plantes. Les modèles Structure-Fonctions.
+# Introduction to plant modelling:the Functional Structural Plant Models.
 ## Dates: 30 Nov. - 3 Dec. 2020
 
 ## Online: Teams meeting
 
-## Lundi 30/11 : Pre-requis
+## Monday 30/11 : Prerequisite
 
 * 9h - 12h00 : 
-   - 15min : Presentation du module - Frédéric Boudon (FB)
-   - 15min : La démarche de modélisation - Video - Christophe Pradal (CP)
-   - 40min : Initiation à la programmation - Video - FB ou/et CP
-      - Le langage de modélisation Python
-         - types
-         - control statements
-         - functions, modules
-         - numeric computation (numpy, scipy)
+   - 15min : Class presentation - Frédéric Boudon (FB)
+   - 15min : The modelling approach - Video - Christophe Pradal (CP)
+   - 40min : Introduction to programming - Video - FB ou/et CP
+      - The Python modelling language
+         - types, control statements, functions, modules
+         - numeric computation (numpy, scipy), data analysis (dataframe, pandas)
          - visualization (matplotlib)
-         - analyse de données (dataframe, pandas)
-      - Environnement de modélisation
-         - conda
-         - Les notebooks
+      - Modeling environment (conda, notebooks)
     - 20min : Questions - FB ou/et CP
-    - 1h30 : Exercices (FB, CP, CF, ??)
+    - 1h30 : Exercises (FB, CP, CF, ??)
          - see the [corresponding notebook](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/python/Python%20lecture.ipynb)
 
 * 14h00 - 17h00 : 
-    - 45min : L'architecture des plantes - Video - Evelyne Costes (EC)
-         - Organisation des plantes (méristèmes, phytomères, unité de croissances, axes, houppiers)
-         - Ramification
-         - Croissance
-         - Réiteration
-         - Modèles architecturaux
-         - Modulation par l'environement ?
+    - 45min : Plant Architecture - Video - Evelyne Costes (EC)
+         - Plant organisation (meristems, phytomers, growth units, axis, crown, ...)
+         - Ramification, Growth, Reiteration
+         - Architecctural Models
     - 15min : Questions - EC
-    - 45min : Phenotypage de l'architecture - Video - FB
+    - 45min : Architecture phenotyping - Video - FB
     - 15min : Questions - FB
-    - 1h : TP Phenotypage de l'architecture : Analyses des données issues du LIDAR - FB & Benoît Pallas (BP)
+    - 1h : Practical work and exercises : Analysis of LIDAR data - FB & Benoît Pallas (BP)
          - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/laserreconstruction/Reconstruction%20from%20laser%20scans.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/laserreconstruction/Analysis%20of%20laser%20scans.ipynb)
          
-## Mardi 01/12 : Modelisation de l'architecture
+## Tuesday 01/12 : Architecture modelling
 
 * 9h - 12h : 
-   - 1h : Présentation du formalisme L-System - Vidéo - FB
-      - Les formalismes de réécritures
-      - Les lsystemes
-      - représentations topologiques par chaines de caractères
-      - interprétation géométriques par la tortue
-      - regles de production
-      - regles sensible aux contextes
-      - régles de décomposition
-      - régles sensible à l'environnement
+   - 1h : Presentation of the L-System formalism - Video - FB
+      - Topological representations of plants with strings.
+      - Turtle geometric interpretation.
+      - Rules of production, decomposition, sensitive to contexts, to the environment ...
+      - Fractals
    - 15min - Questions - FB
-   - 2h : TP et exercices d’application - FB & BP & CP & ...
+   - 2h : Practical work and exercises - FB & CP
       - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/simulation/L-systems.ipynb)
    
 * 14h00 - 17h00 : 
-   - 45min : Simulations d’un arbre à reconstruire à partir des règles architecturales - Vidéo - FB
-      - Règles de dévelopment des organes par un modèle de temps thermiques
-      - Modélisation stochastique du débourrement
-      - Géométrie des branches (modèle empirique, modèle mécanique)
+   - 45min : Simulating plants with L-systems - Vidéo - FB
+      - Rules of organ development using a thermal time model
+      - Stochastic modelling of budburst
+      - Branch geometry (empirical model, mechanistic model)
    - 15min : Questions - FB
-   - 2H : TP et exercices d'application - FB & BP & CP & ...
+   - 1H : Practical work and exercises - FB & BP
       - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/simulation/Apple%20Tree%20Simulation%20-%20Organs.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/simulation/Apple%20Tree%20Simulation%20-%20Architecture.ipynb)
+   - 1h : Modelling project - FB, CP, RP, BP, CF
 
-## Mercredi 02/12 : Modélisation du fonctionnement
+## Wednesday 02/12 : Modelling functioning 
 
 * 9h - 12h : 
-   - 45min : Processus ecophysiologique modulant l'architecture des branches - Vidéo - BP ou EC ?
-   - 15min : Questions EC et/ou BP
+   - 45min : Ecophysiological process. From crop model to FSPM  - Vidéo - BP
+        - Light interception, photosynthesis, Carbon Balance, Water Balance
+        - Crop vs FSPM approaches
+   - 15min : Questions - BP
    - 45min : Modèles de lumière, RUE et de photosynthèse - Vidéo - Christian Fournier (CF)
-   - 15min : Questions CF
-   - 1h : TP sur calcul de l'interception et la photosynthèse - CF & ??
+   - 15min : Questions - CF
+   - 1h : Practical work and exercises on light interception and photosynthesis - CF & RP
 
 * 14h00 - 17h00 : 
-   - 45min : Modèles d'allocation de carbone / de Signalisation - Vidéo - Benoit Pallas
-   - 15min : Questions BP
-   - 2h : TP sur modèle d'allocation - BP & FB
+   - 45min : Carbon allocation model / Signaling - Vidéo - Benoit Pallas
+   - 15min : Questions - BP
+   - 1h : Practical work on carbon allocation model - BP & FB
+   - 1h : Modelling project - FB, CP, RP, BP, CF
 
-## Jeudi 03/12 : Analyse de sensibilité et Projet
+## Thursday 03/12 : Sensitivity analysis and project
 
 * 9h - 12h :
-   - 45min : Analyse de sensibilité - Vidéo - Raphael Perez (RP)
-     - Plan d'experience
-     - Méthode d'analyse de sensibilité
+   - 45min : Sensitivity analysis - Vidéo - Raphael Perez (RP)
+     - Design of experiments
+     - Sensitivity analysis methods
    - 15min : Questions
-   - 2H : TP et exercices d'application (exemple du pommier)  - RP & CF
+   - 1H : Practical work and exercises.  - RP & CF
+   - 1h : Modelling project - FB, CP, RP, BP, CF
 
 * 14h - 17h : 
-   - 2H : Projet de modélisation
+   - 2H : Modelling project
    - 1H : Première Restitution
+
+
+# Modelling project
+
+During this training, some time is devoted to the realization of an architectural and functional model (called FSPM) of a fruiting tree. Some hypothesis on the model should be set and address using a sensitivity analysis on the model. A presentation of the model, its hypothesis, the related bibliography, the analysis of the model and the biological conclusion should be prepared for the examination day.
+The list of proposed fruiting trees to model with related information are given bellow:
+
+- *Mango tree*.
+    - Main adviser: Fred Boudon
+    - V-Mango: a functional–structural model of mango tree growth, development and fruit production. 2020. Boudon et al. Annals of Botany.
+
+- *Palm tree*.
+    - Main adviser: Raphael Perez
+    - Integrating mixed-effect models into an architectural plant model to simulate inter- and intra- progeny variability: a case study on oil palm (Elaeis guineensis Jacq.). 2016. Perez RP, Pallas B, Le Moguédec G, et al.  Journal of Experimental Botany 67: 4507–4521
+    - Designing oil palm architectural ideotypes for optimal light interception and carbon assimilation through a sensitivity analysis of leaf traits. 2018. Perez RPA, Dauzat J, Pallas B, et al. Annals of Botany 121: 909–926.
+
+
+- *Peach tree*.
+    - Main adviser: Benoit Pallas
+    
+- *Vine* 
+    - Main adviser: Christian Fournier
+
+- *Kiwi vine*.
+    - Main adviser: Christophe Pradal
+    - A functional-structural kiwifruit vine model integrating architecture, carbon dynamics and effects of the environment. 2011. Cieslak M, Seleznyova A, Hanan J. Annals of Botany 107: 747-764.
+
+
+# Modelling environment
+
+## Conda Installation
+
+[Conda](https://conda.io) is a package manager that can be installed on Linux, Windows, and Mac.
+If you have not yet installed conda on your computer, follow these instructions:
+
+[Conda Installation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html). Follow instructions for Miniconda.
+
+[Conda Download](https://docs.conda.io/en/latest/miniconda.html). Use the Python 3.8 based installation.
+
+## Modules installation
+
+### Create an environment named *training*
+Launch a console (See Anaconda Prompt in Start menu on windows)
+
+    conda create -n training -c fredboudon -c conda-forge -c R openalea.pgljupyter openalea.plantscan3d alinea.caribu alinea.astk matplotlib pandas scipy git 
+
+### Activate the *training* environment:
+
+    conda activate training
+
+### Install sensitivity analysis packages:
+
+    conda install -c conda-forge rstudio r-rmarkdown r-car r-lme4 r-performanceanalytics r-agricolae r-lhs r-planor
+
+Under **R**, you can install everything using:
+    
+    install.packages('sensitivity' ) # TOCHECK is still necessary
+
+## Installation of the training material
+
+In a convenient directory, you will now download the training material using the following commands.
+
+    cd /path/to/your/documents
+    git clone https://github.com/openalea-training/hbma312_training.git
 
 
