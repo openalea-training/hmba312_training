@@ -80,7 +80,7 @@
 
 * 14h - 17h : 
    - 2H : Modelling project
-   - 1H : Première Restitution
+   - 1H : Presentation of models first draft.
 
 
 # Modelling project
