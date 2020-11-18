@@ -6,7 +6,10 @@ from math import *
 from random import seed
 from openalea.plantgl.all import Revolution
 
+
 seed(SEED)
+
+import meteo
 
 cdate = None
 def initcdate():
@@ -26,7 +29,7 @@ def StartEach(lstring):
     useGroup(3)
   else:
     useGroup(2 if getIterationNb() % 3 == 0 else 0)
-  if cdate.month in range(11,13)+range(1,4):
+  if cdate.month in list(range(11,13))+list(range(1,4)):
     deltatime = 10
   else:
     deltatime = 1
@@ -42,26 +45,28 @@ module SimuInfo
 module Flower
 module Fruit
 
-def init_meristem(gutype, parentdate = None):
+def init_meristem(gufate, gutype, parentdate = None, parentlength = None):
   if parentdate is None:
     init_date = date(cdate.year, 4, 1)
-  elif gutype in  [SyllepticShort, SyllepticMedium, SyllepticLong]:
+  elif gufate == Sylleptic:
     init_date = cdate
-    gutype = set_proleptic(gutype) # SyllepticLong become Long, etc.
   else:
     init_date = date(parentdate.year+1, 4, 1)
-  assert gutype in [ShortGU, MediumGU, LongGU, Inflo, TrunkGU]
-  nbmetamer = growth_unit_length(gutype)
+  assert gutype in [ShortGU, LongGU, Inflo, TrunkGU]
+  nbmetamer = growth_unit_length(gutype, parentlength)
   p = ParameterSet(gutype = gutype,
+                   gufate = gufate,
                    mp = MetamerProduction(metamerprodrate, nbmetamer),
-                   init_date = init_date)
+                   init_date = init_date,
+                   processed_date = init_date - timedelta(days=1))
   return p
+
 
 radiusconstant = 0.25
 radiusexponent = 0.27
 
 Axiom:
-  nproduce  Meristem(init_meristem(TrunkGU))
+  nproduce  Meristem(init_meristem(Proleptic,TrunkGU))
   produce SimuInfo
 
 derivation length: 600
@@ -72,14 +77,14 @@ Meristem(p):
   if p.init_date <= cdate:
     previousnbmetamer = p.mp.nbmetamer
     nbnewmetamer = p.mp.accumulate(cdate)
-    for i in xrange(nbnewmetamer):
+    for i in range(nbnewmetamer):
       rank =  previousnbmetamer+i
       normalizedrank = rank / p.mp.nbfinalmetamer
       nproduce Internode(ParameterSet(length=0.01, finallength = internode_length(rank = rank), width=radiusconstant, ttime = 0, nbchildren = 1))
       nproduce /(144) [  &(60) Leaf(ParameterSet(area=0, finalarea = leaf_area(rank = rank), ttime = 0)) ]
-      ramiftype = branching(p.gutype, normalizedrank)
-      if ramiftype in [SyllepticShort, SyllepticMedium, SyllepticLong] and cdate.year >= 2011:
-        ramiftype = set_proleptic(ramiftype)
+      ramiffate, ramiftype = branching(p.gutype, normalizedrank)
+      if ramiffate == Sylleptic and (cdate.year >= 2011 or p.gufate == Sylleptic):
+        ramiffate = Proleptic
       if ramiftype != Blind:
         nproduce [ &(30) @Tp(0,0,-1) @Ts(0.01) Meristem(init_meristem(ramiftype, p.init_date)) ]
     
@@ -192,7 +197,7 @@ def __initialiseContext__(context):
 	    ctrlPointList = pgl.Point3Array([(-0.000874121, -0.389685, 1),(0.0162006, -0.606468, 1),(0.629545, -0.424825, 1),(0.712296, 0.0104895, 1),(0.645105, 0.516783, 1),(-0.00961528, 0.627098, 1),(-0.0171328, 0.394231, 1)]) , 
 	    )
 	applesection.name = "applesection"
-	panel_0 = ({'active': True, 'visible': True, 'name': 'Panel 1'},[('Curve2D',leafsection),('Curve2D',applesection)])
+	panel_0 = ({'name': 'Panel 1', 'active': True, 'visible': True},[('Curve2D',leafsection),('Curve2D',applesection)])
 	parameterset = [panel_0,]
 	context["__functions__"] = []
 	context["__curves__"] = [('leafsection',leafsection),('applesection',applesection),]

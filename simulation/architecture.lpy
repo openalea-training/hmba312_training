@@ -8,6 +8,11 @@ from random import seed
 
 seed(SEED)
 
+import meteo
+
+leafshape.ustride = 6
+leafshape.vstride = 6
+
 cdate = None
 def initcdate():
   global cdate
@@ -191,7 +196,7 @@ def __initialiseContext__(context):
 	    pgl.Point4Matrix([[(-0.0241355, -0.00107318, -0.00804807, 1), (-0.00877065, -0.00933309, 0.00100194, 1), (0.0221632, -0.00738144, -0.011382, 1), (-0.00223729, -0.00247516, 0.000385988, 1)], [(0.314084, -0.472921, 0.392759, 1), (0.000957513, 0.000400347, 0.33376, 1), (-0.00092555, 0.00517653, 0.332921, 1), (0.408856, 0.483731, 0.413612, 1)], [(0.329337, -0.501345, 0.730665, 1), (0.000326354, 0.0164005, 0.665257, 1), (-0.000118909, 0.019707, 0.66817, 1), (0.414001, 0.558038, 0.74373, 1)], [(0.00223079, 0.0223592, 0.999352, 1), (0.00112035, 0.028812, 1.0005, 1), (-0.000767699, 0.0327184, 0.999658, 1), (-0.0011293, 0.0361733, 1.00279, 1)]]) , 
 	    )
 	leafshape.name = "leafshape"
-	panel_0 = ({'active': True, 'visible': True, 'name': 'Panel 1'},[('Curve2D',leafsection),('Curve2D',applesection),('NurbsPatch',leafshape)])
+	panel_0 = ({'name': 'Panel 1', 'active': True, 'visible': True},[('Curve2D',leafsection),('Curve2D',applesection),('NurbsPatch',leafshape)])
 	parameterset = [panel_0,]
 	context["__functions__"] = []
 	context["__curves__"] = [('leafsection',leafsection),('applesection',applesection),]

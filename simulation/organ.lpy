@@ -1,3 +1,4 @@
+from imp import reload
 import notebook_util as nu ; reload(nu)
 from notebook_util import notebook
 exec(notebook('Apple Tree Simulation - Organs.ipynb'))
@@ -77,6 +78,7 @@ def __initialiseContext__(context):
 	Color_10.name = "Color_10"
 	context.turtle.setMaterial(10,Color_10)
 	PGL_140556071559264 = pgl.ImageTexture("PGL_140556071559264" , "./flower-small.png" , )
+	PGL_140556071559264.name = "PGL_140556071559264"
 	Color_11 = pgl.Texture2D(image = PGL_140556071559264 , )
 	Color_11.name = "Color_11"
 	context.turtle.setMaterial(11,Color_11)
@@ -85,7 +87,7 @@ def __initialiseContext__(context):
 	    pgl.Point2Array([(-1.01037, 0.524751),(-0.0030303, -0.00517379),(1.01037, 0.503186)]) , 
 	    )
 	leafsection.name = "leafsection"
-	panel_0 = ({'active': True, 'visible': True, 'name': 'Panel 1'},[('Curve2D',leafsection)])
+	panel_0 = ({'name': 'Panel 1', 'active': True, 'visible': True},[('Curve2D',leafsection)])
 	parameterset = [panel_0,]
 	context["__functions__"] = []
 	context["__curves__"] = [('leafsection',leafsection),]

@@ -25,5 +25,5 @@ def enum(*names):
 
 if __name__ == '__main__':
     enum(['short','medium','long'])
-    print short
+    print(short)
 

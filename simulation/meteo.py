@@ -23,7 +23,7 @@ def get_last_day_for_temperature():
     return __first_day+timedelta(days=len(__temperatures)-1)
 
 def get_all_dates():
-    return [__first_day+timedelta(days=i) for i in xrange(len(__temperatures))]
+    return [__first_day+timedelta(days=i) for i in range(len(__temperatures))]
 
 def get_all_temperatures():
     return __temperatures

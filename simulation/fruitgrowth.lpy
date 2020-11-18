@@ -29,7 +29,7 @@ totalfruitnb = 0
 
 def increment_date(timestep = 1):
     global cdate, prevdate
-    mrange = range(9,13)+range(1,4)
+    mrange = list(range(9,13))+list(range(1,4))
     if not FULLPLANT and cdate.year == 2010:
       mrange += range(7,9)
     if cdate.month in mrange:
@@ -138,13 +138,13 @@ Axiom:
   if FULLPLANT:
     nproduce  Meristem(0, init_meristem(Proleptic, TrunkGU), trunkc)
   else:
-    for i in xrange(20):
+    for i in range(20):
         nproduce Internode(ParameterSet(length=INTERNODE_FLENGTH, finallength = INTERNODE_FLENGTH, width=0.5, ttime = 1000), trunkc)
     nproduce [ &(INSERTION_ANGLE) @Tp(0,0,-1) @Ts(BRANCH_ELASTICITY) Meristem(1, init_meristem(Sylleptic, LongGU, cdate, 30), init_carbon(1,trunkc)) ] 
-    for i in xrange(2):
+    for i in range(2):
         nproduce Internode(ParameterSet(length=INTERNODE_FLENGTH, finallength = INTERNODE_FLENGTH, width=0.5, ttime = 1000), trunkc)
     nproduce /(PHYLLOTAXY)[ &(INSERTION_ANGLE) @Tp(0,0,-1) @Ts(BRANCH_ELASTICITY) Meristem(1, init_meristem(Sylleptic, LongGU, cdate, 30), init_carbon(1,trunkc)) ]
-    for i in xrange(8):
+    for i in range(8):
       nproduce Internode(ParameterSet(length=INTERNODE_FLENGTH, finallength = INTERNODE_FLENGTH, width=0.5, ttime = 1000), trunkc)
   produce SimuInfo
 
@@ -156,7 +156,7 @@ Meristem(o, p, c):
   if p.init_date <= cdate:
     previousnbmetamer = p.mp.nbmetamer
     nbnewmetamer = p.mp.accumulate_range(p.init_date, cdate)
-    for i in xrange(nbnewmetamer):
+    for i in range(nbnewmetamer):
       rank =  previousnbmetamer+i
       normalizedrank = rank / p.mp.nbfinalmetamer
       nproduce Internode(ParameterSet(length=0.01, finallength = internode_length(rank = rank, maxlength=INTERNODE_FLENGTH), width=0.01, ttime = 0), c)
@@ -409,7 +409,7 @@ def __initialiseContext__(context):
 	    pgl.Point4Matrix([[(-0.0241355, -0.0549754, -0.00804807, 1), (-0.00877065, -0.00933309, 0.00100194, 1), (0.0221632, 0.0405477, -0.00898557, 1), (-0.00223729, -0.00247516, 0.000385988, 1)], [(0.314084, -0.472921, 0.392759, 1), (0.000957513, 0.000400347, 0.33376, 1), (-0.00092555, 0.00517653, 0.332921, 1), (0.408856, 0.483731, 0.413612, 1)], [(0.329337, -0.501345, 0.730665, 1), (0.000326354, 0.0164005, 0.665257, 1), (-0.000118909, 0.019707, 0.66817, 1), (0.414001, 0.558038, 0.74373, 1)], [(0.00223079, 0.0223592, 0.999352, 1), (0.00112035, 0.028812, 1.0005, 1), (-0.000767699, 0.0327184, 0.999658, 1), (-0.0011293, 0.0361733, 1.00279, 1)]]) , 
 	    )
 	leafshape.name = "leafshape"
-	panel_0 = ({'active': True, 'visible': True, 'name': 'Panel 1'},[('Curve2D',leafsection),('Curve2D',applesection),('Function',longproba),('Function',shortproba),('NurbsPatch',leafshape)])
+	panel_0 = ({'name': 'Panel 1', 'active': True, 'visible': False},[('Curve2D',leafsection),('Curve2D',applesection),('Function',longproba),('Function',shortproba),('NurbsPatch',leafshape)])
 	parameterset = [panel_0,]
 	context["__functions__"] = [('longproba',longproba),('shortproba',shortproba),]
 	context["__curves__"] = [('leafsection',leafsection),('applesection',applesection),]
