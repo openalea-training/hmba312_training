@@ -104,15 +104,15 @@ If you have not yet installed conda on your computer, follow these instructions:
 ### Create an environment named *training*
 Launch a console (See Anaconda Prompt in Start menu on windows)
 
-    conda create -n training -c fredboudon -c conda-forge -c R openalea.pgljupyter openalea.plantscan3d alinea.caribu alinea.astk matplotlib pandas scipy git 
+    conda create -n training -c fredboudon -c conda-forge openalea.pgljupyter openalea.plantscan3d alinea.caribu alinea.astk matplotlib pandas scipy git 
+
+### Install sensitivity analysis packages:
+
+    conda install -n training -c conda-forge r-irkernel R rpy2 rstudio r-rmarkdown r-car r-lme4 r-performanceanalytics r-agricolae r-lhs r-planor
 
 ### Activate the *training* environment:
 
     conda activate training
-
-### Install sensitivity analysis packages:
-
-    conda install -c conda-forge rstudio r-rmarkdown r-car r-lme4 r-performanceanalytics r-agricolae r-lhs r-planor
 
 Under **R**, you can install everything using:
     
