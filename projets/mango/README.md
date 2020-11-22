@@ -20,8 +20,10 @@ The actual value can be found in the following table:
 
 The growth of the organs are modelled using a logistic function that depend of thermal time.
 
-$ l(tts) = \frac{L}{1+exp{\frac{tts-t_{ip}}{B}} $
+<!--- l(tts) = \frac{L}{1+exp{\frac{tts-t_{ip}}{B}}} -->
 
+![formula](https://render.githubusercontent.com/render/math?math=l(tts)%20\frac%7BL%7D%7B1%2Bexp%7B\frac%7Btts-t_%7Bip%7D%7D%7BB%7D%7D%7D)
+ 
 whose parameters are given in the following table.
 
 <img src="./organgrowth.png" width=600>
