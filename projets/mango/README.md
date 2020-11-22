@@ -80,3 +80,8 @@ The probability to flower is again depend of the burst date of the mother GU.
 The number of inflorescences produced per terminal GU was usually one, except for GUs generated in December–January that produced an average of 1.6 inflorescences. The date of flowering of the inflorescences was recorded only during cycle 2, and most of the GUs flowered in September according to a two-peak pattern.
 
 <img src="./fig7.jpg" width=400>
+
+## Environmental data
+
+Some wheather data can be found [here](https://github.com/fredboudon/vmango/blob/master/share/environment/meteo-BMA.csv). Use `Tmoy` as mean temperature of the day.
+
