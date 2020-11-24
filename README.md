@@ -72,8 +72,7 @@
 
 * 9h - 12h :
    - 45min : Sensitivity analysis - Vidéo - Raphael Perez (RP)
-     - Design of experiments
-     - Sensitivity analysis methods
+     - Concepts and methods
    - 15min : Questions
    - 1H : Practical work and exercises.  - RP & CF
    - 1h : Modelling project - FB, CP, RP, BP, CF
