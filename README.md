@@ -1,14 +1,16 @@
 # Introduction to plant modelling:the Functional Structural Plant Models.
 ## Dates: 30 Nov. - 3 Dec. 2020
 
-## Online: Teams meeting
+## Online: Zoom meeting
 
 ## Monday 30/11 : Prerequisite
 
+Lien [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) 
+ 
 * 9h - 12h00 : 
    - 15min : Class presentation - Frédéric Boudon (FB)
    - 15min : The modelling approach - Video - Christophe Pradal (CP)
-   - 40min : Introduction to programming - Video - FB ou/et CP
+   - 40min : Introduction to programming - Video - CP
       - The Python modelling language
          - types, control statements, functions, modules
          - numeric computation (numpy, scipy), data analysis (dataframe, pandas)
@@ -24,13 +26,17 @@
          - Ramification, Growth, Reiteration
          - Architecctural Models
     - 15min : Questions - EC
-    - 45min : Architecture phenotyping - Video - FB
+    - 50min : Architecture phenotyping - Video - FB
          - [Part 1](https://video.umontpellier.fr/video/7564-hbma312-phenotypage-des-plantes-part-1/) - [Part 2](https://video.umontpellier.fr/video/7567-hbma312-phenotypage-des-plantes-part-2/) - [Part 3](https://video.umontpellier.fr/video/7566-hbma312-phenotypage-des-plantes-part-3/) - [Part 4](https://video.umontpellier.fr/video/7569-hbma312-phenotypage-des-plantes-part-4/) - [Part 5](https://video.umontpellier.fr/video/7568-hbma312-phenotypage-des-plantes-part-5/)
     - 15min : Questions - FB
     - 1h : Practical work and exercises : Analysis of LIDAR data - FB & Benoît Pallas (BP)
          - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/laserreconstruction/Reconstruction%20from%20laser%20scans.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/laserreconstruction/Analysis%20of%20laser%20scans.ipynb)
          
 ## Tuesday 01/12 : Architecture modelling
+
+Frédéric Boudon vous invite à une réunion Zoom planifiée.
+
+Lien [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0NFTVpxN0x0UT09)
 
 * 9h - 12h : 
    - 1h : Presentation of the L-System formalism - Video - FB
@@ -54,6 +60,8 @@
 
 ## Wednesday 02/12 : Modelling functioning 
 
+Lien [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COHJNUlQyRi9DZz09)
+
 * 9h - 12h : 
    - 45min : Ecophysiological processes. From crop model to FSPM  - Vidéo - BP
         - Light interception, photosynthesis, Carbon Balance, Water Balance
@@ -71,6 +79,8 @@
 
 ## Thursday 03/12 : Sensitivity analysis and project
 
+Lien [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG5jY0NmdjRndz09)
+
 * 9h - 12h :
    - 45min : Sensitivity analysis - Vidéo - Raphael Perez (RP)
      - Concepts and methods
@@ -82,11 +92,17 @@
    - 2H : Modelling project
    - 1H : Presentation of models first draft.
 
+## Wednesday 16/12 Afternoon : Presentation of the modelling projects
+
+ * 13h30 - 17h30 :
+   - Each group will have to present its work for 15 minutes. It will be follow by 10 minutes of questions and 5 minutes of deliberation.
 
 # Modelling project
 
-During this training, some time is devoted to the realization of an architectural and functional model (called FSPM) of a fruiting tree. Some hypothesis on the model should be set and address using a sensitivity analysis on the model. A presentation of the model, its hypothesis, the related bibliography, the analysis of the model and the biological conclusion should be prepared for the examination day.
+During this training, some time is devoted to the realization of an architectural and functional model (called FSPM) of a fruiting tree. Some hypothesis on the model should be set and address using a sensitivity analysis on the model. A presentation of the model, its hypothesis, the related bibliography, the analysis of the model and the biological conclusion should be prepared for the examination day. The presentation should follow a **modelling approach** as presented in the first day. A critical point will be to present clearly the **research question** that the model will address, and its **hypotheses**.
 The list of proposed fruiting trees to model with related information are given [here](./projets/README.md)
+
+Groups of two should be constituted and each group will work on a different tree specie. To determine assignment, you need to fill the following [form](https://framadate.org/Ztv1NOQCl7Qy3FT3). If two people are already assigned to a tree specie, the specie is no more selectable.
 
 # Modelling environment
 
