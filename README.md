@@ -26,7 +26,7 @@ Lien [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERn
          - Ramification, Growth, Reiteration
          - Architecctural Models
     - 15min : Questions - EC
-    - 45min : Architecture phenotyping - Video - FB
+    - 50min : Architecture phenotyping - Video - FB
          - [Part 1](https://video.umontpellier.fr/video/7564-hbma312-phenotypage-des-plantes-part-1/) - [Part 2](https://video.umontpellier.fr/video/7567-hbma312-phenotypage-des-plantes-part-2/) - [Part 3](https://video.umontpellier.fr/video/7566-hbma312-phenotypage-des-plantes-part-3/) - [Part 4](https://video.umontpellier.fr/video/7569-hbma312-phenotypage-des-plantes-part-4/) - [Part 5](https://video.umontpellier.fr/video/7568-hbma312-phenotypage-des-plantes-part-5/)
     - 15min : Questions - FB
     - 1h : Practical work and exercises : Analysis of LIDAR data - FB & Benoît Pallas (BP)
@@ -95,7 +95,7 @@ Lien [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG
 ## Wednesday 16/12 Afternoon : Presentation of the modelling projects
 
  * 13h30 - 17h30 :
-   - For each group
+   - Each group will have to present its work for 15 minutes. It will be follow by 10 minutes of questions and 5 minutes of deliberation.
 
 # Modelling project
 
