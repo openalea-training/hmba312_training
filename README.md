@@ -96,7 +96,7 @@ Lien [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG
 
 # Modelling project
 
-During this training, some time is devoted to the realization of an architectural and functional model (called FSPM) of a fruiting tree. Some hypothesis on the model should be set and address using a sensitivity analysis on the model. A presentation of the model, its hypothesis, the related bibliography, the analysis of the model and the biological conclusion should be prepared for the examination day.
+During this training, some time is devoted to the realization of an architectural and functional model (called FSPM) of a fruiting tree. Some hypothesis on the model should be set and address using a sensitivity analysis on the model. A presentation of the model, its hypothesis, the related bibliography, the analysis of the model and the biological conclusion should be prepared for the examination day. The presentation should follow a **modelling approach** as presented in the first day. A critical point will be to present clearly the **research question** that the model will address, and its **hypotheses**.
 The list of proposed fruiting trees to model with related information are given [here](./projets/README.md)
 
 To determine assignment to the project, you need to fill the following [form](https://framadate.org/Ztv1NOQCl7Qy3FT3)
