@@ -8,7 +8,7 @@
 * 9h - 12h00 : 
    - 15min : Class presentation - Frédéric Boudon (FB)
    - 15min : The modelling approach - Video - Christophe Pradal (CP)
-   - 40min : Introduction to programming - Video - FB ou/et CP
+   - 40min : Introduction to programming - Video - CP
       - The Python modelling language
          - types, control statements, functions, modules
          - numeric computation (numpy, scipy), data analysis (dataframe, pandas)
