@@ -1,10 +1,12 @@
 # Introduction to plant modelling:the Functional Structural Plant Models.
 ## Dates: 30 Nov. - 3 Dec. 2020
 
-## Online: Teams meeting
+## Online: Zoom meeting
 
 ## Monday 30/11 : Prerequisite
 
+Lien [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) 
+ 
 * 9h - 12h00 : 
    - 15min : Class presentation - Frédéric Boudon (FB)
    - 15min : The modelling approach - Video - Christophe Pradal (CP)
@@ -32,6 +34,10 @@
          
 ## Tuesday 01/12 : Architecture modelling
 
+Frédéric Boudon vous invite à une réunion Zoom planifiée.
+
+Lien [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0NFTVpxN0x0UT09)
+
 * 9h - 12h : 
    - 1h : Presentation of the L-System formalism - Video - FB
       - Topological representations of plants with strings.
@@ -54,6 +60,8 @@
 
 ## Wednesday 02/12 : Modelling functioning 
 
+Lien [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COHJNUlQyRi9DZz09)
+
 * 9h - 12h : 
    - 45min : Ecophysiological processes. From crop model to FSPM  - Vidéo - BP
         - Light interception, photosynthesis, Carbon Balance, Water Balance
@@ -71,6 +79,8 @@
 
 ## Thursday 03/12 : Sensitivity analysis and project
 
+Lien [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG5jY0NmdjRndz09)
+
 * 9h - 12h :
    - 45min : Sensitivity analysis - Vidéo - Raphael Perez (RP)
      - Concepts and methods
@@ -82,6 +92,7 @@
    - 2H : Modelling project
    - 1H : Presentation of models first draft.
 
+## Wednesday 16/12 Afternoon : Presentation of the modelling projects
 
 # Modelling project
 
