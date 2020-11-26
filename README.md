@@ -82,7 +82,7 @@ Lien [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COH
 Lien [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG5jY0NmdjRndz09)
 
 * 9h - 12h :
-   - 45min : Sensitivity analysis - Vidéo - Raphael Perez (RP)
+   - 45min : Sensitivity analysis - [Vidéo](https://video.umontpellier.fr/video/7681-hbma312-analyse-de-sensibilite/) - Raphael Perez (RP)
      - Concepts and methods
    - 15min : Questions
    - 1H : Practical work and exercises.  - RP & CF
