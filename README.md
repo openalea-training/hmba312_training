@@ -72,7 +72,7 @@ Lien [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COH
    - 1h : Practical work and exercises on light interception and photosynthesis - CF & RP
 
 * 14h00 - 17h00 : 
-   - 45min : Carbon allocation model / Signaling - Vidéo - Benoit Pallas
+   - 45min : Recent work on carbon allocation model / signaling in apple tree- Vidéo - Benoit Pallas
    - 15min : Questions - BP
    - 1h : Practical work on carbon allocation model - BP & FB
    - 1h : Modelling project - FB, CP, RP, BP, CF
