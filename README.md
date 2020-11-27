@@ -31,7 +31,10 @@ Lien [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERn
     - 15min : Questions - FB
     - 1h : Practical work and exercises : Analysis of LIDAR data - FB & Benoît Pallas (BP)
          - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/laserreconstruction/Reconstruction%20from%20laser%20scans.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/laserreconstruction/Analysis%20of%20laser%20scans.ipynb)
-         
+         - To launch the notebooks, launch in a conda console
+             - `jupyter notebook "laserreconstruction/Reconstruction from laser scans.ipynb"`
+             - `jupyter notebook "laserreconstruction/Analysis of laser scans.ipynb"`
+
 ## Tuesday 01/12 : Architecture modelling
 
 Frédéric Boudon vous invite à une réunion Zoom planifiée.
@@ -48,7 +51,9 @@ Lien [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0
    - 15min - Questions - FB
    - 1h15 : Practical work and exercises - FB & CP
       - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/lsystem/L-systems.ipynb)
-   
+      - To launch the notebooks, launch in a conda console
+           - `jupyter notebook lsystem/L-systems.ipynb`
+
 * 14h00 - 17h00 : 
    - 45min : Simulating plants with L-systems - Video - FB
       - Rules of organ development using a thermal time model
@@ -58,6 +63,10 @@ Lien [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0
    - 15min : Questions - FB
    - 1H : Practical work and exercises - FB & BP
       - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Organs.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Architecture.ipynb)
+      - To launch the notebooks, launch in a conda console
+           - `jupyter notebook "archimodelling/Apple Tree Simulation - Organs.ipynb"`
+      - To launch the notebooks, launch in a conda console
+           - `jupyter notebook "archimodelling/Apple Tree Simulation - Architecture.ipynb"`
    - 1h : Modelling project - FB, CP, RP, BP, CF
 
 ## Wednesday 02/12 : Modelling functioning 
@@ -142,5 +151,7 @@ In a convenient directory, you will now download the training material using the
 
     cd /path/to/your/documents
     git clone https://github.com/openalea-training/hbma312_training.git
+    cd hbma312_training
+    python setup.py install
 
 
