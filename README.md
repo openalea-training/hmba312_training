@@ -39,23 +39,25 @@ Frédéric Boudon vous invite à une réunion Zoom planifiée.
 Lien [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0NFTVpxN0x0UT09)
 
 * 9h - 12h : 
-   - 1h : Presentation of the L-System formalism - Video - FB
+   - 1h30 : Presentation of the L-System formalism - Video - FB
       - Topological representations of plants with strings.
       - Turtle geometric interpretation.
       - Rules of production, decomposition, sensitive to contexts, to the environment ...
       - Fractals
+      - [Part 1](https://video.umontpellier.fr/video/7717-hbma312-lsystems-part-1/) - [Part 2](https://video.umontpellier.fr/video/7718-hbma312-lsystems-part-2/) - [Part 3](https://video.umontpellier.fr/video/7720-hbma312-lsystems-part-3/) - [Part 4](https://video.umontpellier.fr/video/7721-hbma312-lsystems-part-4/)
    - 15min - Questions - FB
-   - 2h : Practical work and exercises - FB & CP
-      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/simulation/L-systems.ipynb)
+   - 1h15 : Practical work and exercises - FB & CP
+      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/lsystem/L-systems.ipynb)
    
 * 14h00 - 17h00 : 
-   - 45min : Simulating plants with L-systems - Vidéo - FB
+   - 45min : Simulating plants with L-systems - Video - FB
       - Rules of organ development using a thermal time model
       - Stochastic modelling of budburst
       - Branch geometry (empirical model, mechanistic model)
+      
    - 15min : Questions - FB
    - 1H : Practical work and exercises - FB & BP
-      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/simulation/Apple%20Tree%20Simulation%20-%20Organs.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/simulation/Apple%20Tree%20Simulation%20-%20Architecture.ipynb)
+      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Organs.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Architecture.ipynb)
    - 1h : Modelling project - FB, CP, RP, BP, CF
 
 ## Wednesday 02/12 : Modelling functioning 
