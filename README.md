@@ -5,7 +5,7 @@
 
 ## Monday 30/11 : Prerequisite
 
-Lien [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) 
+Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) 
  
 * 9h - 12h00 : 
    - 15min : Class presentation - Frédéric Boudon (FB)
@@ -16,8 +16,8 @@ Lien [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERn
          - numeric computation (numpy, scipy), data analysis (dataframe, pandas)
          - visualization (matplotlib)
       - Modeling environment (conda, notebooks)
-    - 20min : Questions - FB ou/et CP
-    - 1h30 : Exercises (FB, CP, CF, ??)
+    - 20min : Questions - CP
+    - 1h30 : Exercises (CP, FB, CF)
          - see the [corresponding notebook](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/python/Python%20lecture.ipynb)
 
 * 14h00 - 17h00 : 
@@ -37,12 +37,10 @@ Lien [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERn
 
 ## Tuesday 01/12 : Architecture modelling
 
-Frédéric Boudon vous invite à une réunion Zoom planifiée.
-
-Lien [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0NFTVpxN0x0UT09)
+Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0NFTVpxN0x0UT09)
 
 * 9h - 12h : 
-   - 1h30 : Presentation of the L-System formalism - Video - FB
+   - 1h30 : The L-System formalism - Video - FB
       - Topological representations of plants with strings.
       - Turtle geometric interpretation.
       - Rules of production, decomposition, sensitive to contexts, to the environment ...
@@ -71,29 +69,29 @@ Lien [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0
 
 ## Wednesday 02/12 : Modelling functioning 
 
-Lien [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COHJNUlQyRi9DZz09)
+Meeting [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COHJNUlQyRi9DZz09)
 
 * 9h - 12h : 
-   - 45min : Ecophysiological processes. From crop model to FSPM  - Vidéo - BP
+   - 45min : Ecophysiological processes. From crop model to FSPM  - Video - BP
         - Light interception, photosynthesis, Carbon Balance, Water Balance
         - Crop vs FSPM approaches
    - 15min : Questions - BP
-   - 45min : Modèles de lumière, RUE et de photosynthèse - Vidéo - Christian Fournier (CF)
+   - 45min : Light modelling, RUE and photosynthesis - Video - Christian Fournier (CF)
    - 15min : Questions - CF
    - 1h : Practical work and exercises on light interception and photosynthesis - CF & RP
 
 * 14h00 - 17h00 : 
-   - 45min : Recent work on carbon allocation model / signaling in apple tree- Vidéo - Benoit Pallas
+   - 45min : Recent work on carbon allocation model / signaling in apple tree - Video - Benoit Pallas
    - 15min : Questions - BP
    - 1h : Practical work on carbon allocation model - BP & FB
    - 1h : Modelling project - FB, CP, RP, BP, CF
 
 ## Thursday 03/12 : Sensitivity analysis and project
 
-Lien [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG5jY0NmdjRndz09)
+Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG5jY0NmdjRndz09)
 
 * 9h - 12h :
-   - 45min : Sensitivity analysis - [Vidéo](https://video.umontpellier.fr/video/7681-hbma312-analyse-de-sensibilite/) - Raphael Perez (RP)
+   - 45min : Sensitivity analysis - [Video](https://video.umontpellier.fr/video/7681-hbma312-analyse-de-sensibilite/) - Raphael Perez (RP)
      - Concepts and methods
    - 15min : Questions
    - 1H : Practical work and exercises.  - RP & CF
