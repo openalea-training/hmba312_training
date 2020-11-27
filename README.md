@@ -124,7 +124,7 @@ Launch a console (See Anaconda Prompt in Start menu on windows)
 
 ### Install sensitivity analysis packages:
 
-    conda install -n training -c conda-forge r-irkernel R rpy2 rstudio r-rmarkdown r-car r-lme4 r-performanceanalytics r-agricolae r-lhs r-planor
+    conda install -n training -c conda-forge r-irkernel R rpy2 r-rmarkdown r-car r-lme4 r-performanceanalytics r-agricolae r-lhs r-planor
 
 ### Activate the *training* environment:
 
