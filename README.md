@@ -120,7 +120,7 @@ If you have not yet installed conda on your computer, follow these instructions:
 ### Create an environment named *training*
 Launch a console (See Anaconda Prompt in Start menu on windows)
 
-    conda create -n training -c fredboudon -c conda-forge openalea.pgljupyter openalea.plantscan3d alinea.caribu alinea.astk matplotlib pandas scipy git 
+    conda create -n training -c fredboudon -c conda-forge python=3.8 openalea.pgljupyter openalea.plantscan3d alinea.caribu alinea.astk matplotlib pandas scipy git 
 
 ### Install sensitivity analysis packages:
 
