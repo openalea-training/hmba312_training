@@ -1,9 +1,9 @@
 from datetime import datetime, date, timedelta
-
+import os
 __temperatures = None
 __first_day = None
 
-def init_temperatures(filename = 'meteo.csv'):
+def init_temperatures(filename = os.path.join(os.path.dirname(__file__),'meteo.csv')):
     global  __temperatures, __first_day
     if __temperatures is None:
         from pandas import read_csv
