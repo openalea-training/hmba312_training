@@ -10,7 +10,7 @@ def pnotebook(fname):
 
 def notebook(fname):
     import os, sys
-    cmd =  [sys.executable,'notebook_util.py', fname]
+    cmd =  [sys.executable,__file__, fname]
     import subprocess
     proc = subprocess.Popen(cmd,stdout=subprocess.PIPE)
     return proc.stdout.read()
