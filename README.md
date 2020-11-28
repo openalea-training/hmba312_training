@@ -24,7 +24,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
     - 45min : Plant Architecture - Video - Evelyne Costes (EC)
          - Plant organisation (meristems, phytomers, growth units, axis, crown, ...)
          - Ramification, Growth, Reiteration
-         - Architecctural Models
+         - Architectural Models
     - 15min : Questions - EC
     - 50min : Architecture phenotyping - Video - FB
          - [Part 1](https://video.umontpellier.fr/video/7564-hbma312-phenotypage-des-plantes-part-1/) - [Part 2](https://video.umontpellier.fr/video/7567-hbma312-phenotypage-des-plantes-part-2/) - [Part 3](https://video.umontpellier.fr/video/7566-hbma312-phenotypage-des-plantes-part-3/) - [Part 4](https://video.umontpellier.fr/video/7569-hbma312-phenotypage-des-plantes-part-4/) - [Part 5](https://video.umontpellier.fr/video/7568-hbma312-phenotypage-des-plantes-part-5/)
@@ -150,6 +150,6 @@ In a convenient directory, you will now download the training material using the
     cd /path/to/your/documents
     git clone https://github.com/openalea-training/hbma312_training.git
     cd hbma312_training
-    python setup.py install
+    python setup.py develop
 
 

@@ -65,7 +65,7 @@ Axiom:
   nproduce  Meristem(init_meristem(Proleptic,TrunkGU))
   produce SimuInfo
 
-derivation length: 600
+derivation length: 200
 production:
 group 0:
 
@@ -135,7 +135,7 @@ Internode(p) --> _(p.width) F(p.length)
 
 Leaf(p) :
   if p.area > 0:
-    width = sqrt(p.area / 1.4)
+    width = sqrt(p.area / 4)
     length = 2 * width
     produce ,(10) @g(leafshape, length) #SetContour(leafsection) TextureVScale(1./length) _(width/2) F(length)
 
