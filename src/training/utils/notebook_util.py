@@ -5,11 +5,13 @@ def pnotebook(fname):
   source = ''
   for cell in nb['cells']:
     if cell['cell_type'] == 'code' and (not 'tags' in cell['metadata'] or not ('example' in cell['metadata']['tags'])):
-      source += cell['source']+'\n'
+        if not cell['source'].startswith('%%lpy'):
+          source += cell['source']+'\n'
   return source
 
 def notebook(fname):
     import os, sys
+    assert(os.path.exists(fname))
     cmd =  [sys.executable,__file__, fname]
     import subprocess
     proc = subprocess.Popen(cmd,stdout=subprocess.PIPE)
@@ -19,5 +21,4 @@ def notebook(fname):
 
 if __name__ == '__main__':
     import sys
-
     print (pnotebook(sys.argv[1]))
