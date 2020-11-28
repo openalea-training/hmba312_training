@@ -6,6 +6,8 @@ from math import *
 from random import seed
 from openalea.plantgl.all import Revolution
 
+leafshape.ustride = 6
+leafshape.vstride = 6
 
 seed(SEED)
 
@@ -69,7 +71,7 @@ Axiom:
   nproduce  Meristem(init_meristem(Proleptic,TrunkGU))
   produce SimuInfo
 
-derivation length: 600
+derivation length: 200
 production:
 group 0:
 
