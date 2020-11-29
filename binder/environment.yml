@@ -6,5 +6,12 @@ channels:
 
 dependencies:
   - openalea.plantgl
-  - matplotlib
-  - pandas
+  - python=3.8 
+  - openalea.pgljupyter 
+  - openalea.plantscan3d 
+  - alinea.caribu 
+  - alinea.astk 
+  - matplotlib 
+  - pandas 
+  - scipy 
+  - git
