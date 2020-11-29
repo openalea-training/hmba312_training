@@ -12,6 +12,8 @@ The list of proposed fruiting trees to model with related information are given 
     - Main adviser: Raphael Perez
     - Integrating mixed-effect models into an architectural plant model to simulate inter- and intra- progeny variability: a case study on oil palm (Elaeis guineensis Jacq.). 2016. Perez RP, Pallas B, Le Moguédec G, et al.  Journal of Experimental Botany 67: 4507–4521
     - Designing oil palm architectural ideotypes for optimal light interception and carbon assimilation through a sensitivity analysis of leaf traits. 2018. Perez RPA, Dauzat J, Pallas B, et al. Annals of Botany 121: 909–926.
+    - see [Instructions](./oilpalm/InstructionOilPalm.md)
+
 
 
 - *Peach tree*.
