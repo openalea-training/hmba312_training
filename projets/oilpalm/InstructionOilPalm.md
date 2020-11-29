@@ -6,6 +6,8 @@ Perez R, Pallas B, Griffon S, et al. Reconstructing three-dimensional oil palm a
 
 Perez RPA, Pallas B, Le Moguédec G, et al. Integrating mixed-effect models into an architectural plant model to simulate inter- and intra-progeny variability: a case study on oil palm ( Elaeis guineensis Jacq.). J Exp Bot. 2016;67(15):4507-4521. doi:10.1093/jxb/erw203 Link to the article: https://academic.oup.com/jxb/article-lookup/doi/10.1093/jxb/erw203
 
+Perez RPA, Dauzat J, Pallas B, et al. Designing oil palm architectural ideotypes for optimal light interception and carbon assimilation through a sensitivity analysis of leaf traits. Ann Bot. 2018;121(5):909-926. doi:10.1093/aob/mcx161
+
 ## Botany and architecture
 
 Oil palm is a perennial plant which architecture follows the Corner model, which is characterized by a mono- axial shoot (the stem) that produces phytomers in regular succession. Leaves are disposed according to a radial symmetry with a phyllotaxis varying from 135.7 to 137.5 degrees. Due to this regular phyllotaxis, it is possible to distinguish spirals of leaves (parastichies) and determine the order (rank) with which leaves were emitted. The order 8 parastichy is the reference to identify leaf rank. Leaf rank 1 is the youngest leaf fully open (unfolded) leaf at the top of the stem (leaves below rank one are called spears). As a result, the topological position of a leaf within the crown can be used to estimate its age.
