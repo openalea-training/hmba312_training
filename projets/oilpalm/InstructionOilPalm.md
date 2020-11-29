@@ -8,7 +8,7 @@ Perez RPA, Pallas B, Le Moguédec G, et al. Integrating mixed-effect models into
 
 ## Botany and architecture
 
-Oil palm is a perennial plant which architecture follows the Corner model, which is characterized by a mono- axial shoot (the stem) that produces phytomers in regular succession. Leaves are disposed according to a radial symmetry with a phyllotaxis varying from 135.7 to 137.5 degrees.Due to this regular phyllotaxis, it is possible to distinguish spi- rals of leaves (parastichies) and determine the order (rank) with which leaves were emitted. The order 8 parastichy is the reference to identify leaf rank. Leaf rank 1 is the youngest leaf fully open (unfolded) leaf at the top of the stem (leaves below rank one are called spears). As a result, the topological position of a leaf within the crown can be used to estimate its age.
+Oil palm is a perennial plant which architecture follows the Corner model, which is characterized by a mono- axial shoot (the stem) that produces phytomers in regular succession. Leaves are disposed according to a radial symmetry with a phyllotaxis varying from 135.7 to 137.5 degrees. Due to this regular phyllotaxis, it is possible to distinguish spirals of leaves (parastichies) and determine the order (rank) with which leaves were emitted. The order 8 parastichy is the reference to identify leaf rank. Leaf rank 1 is the youngest leaf fully open (unfolded) leaf at the top of the stem (leaves below rank one are called spears). As a result, the topological position of a leaf within the crown can be used to estimate its age.
 
 <img src="./cornerModel.JPG" width=600>
 
@@ -19,14 +19,13 @@ Mature oil palm leaves are compound leaves with an even-pinnate arrangement. The
 
 ## Modelling oil palm architetcure from allometric reationships
 
-Some extract of the publication to help you do the modelling is given below. 
-The architecture is modeled as a collection of allometric relationships, with three variables accounting for morphogenetic gradients: 
+The architecture of oil palm can be modeled as a collection of allometric relationships, with three variables accounting for morphogenetic gradients: 
 
 <img src="./explanatry_allometries.JPG" width=600>
 
 The allometric relationships can be found in the following figure:
 
-<img src="./allometries.JPG" width=600>
+<img src="./allometries.JPG" width=1000>
 
 and the associated parameters:
 
