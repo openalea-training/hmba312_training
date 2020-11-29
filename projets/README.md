@@ -26,4 +26,4 @@ The list of proposed fruiting trees to model with related information are given 
 
 - *Kiwi vine*.
     - Main adviser: Christophe Pradal
-    - A functional-structural kiwifruit vine model integrating architecture, carbon dynamics and effects of the environment. 2011. Cieslak M, Seleznyova A, Hanan J. Annals of Botany 107: 747-764.
+    - [A functional-structural kiwifruit vine model integrating architecture, carbon dynamics and effects of the environment. 2011. Cieslak M, Seleznyova A, Hanan J. Annals of Botany 107: 747-764](https://academic.oup.com/aob/article/107/5/747/245402).
