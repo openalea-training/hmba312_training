@@ -9,7 +9,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
  
 * 9h - 12h00 : 
    - 15min : Class presentation - Frédéric Boudon (FB)
-   - 15min : The modelling approach - Video - Christophe Pradal (CP)
+   - 15min : The modelling approach - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - Christophe Pradal (CP)
    - 40min : Introduction to programming - Video - CP
       - The Python modelling language
          - types, control statements, functions, modules
@@ -19,9 +19,11 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
     - 20min : Questions - CP
     - 1h30 : Exercises (CP, FB, CF)
          - see the [corresponding notebook](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/python/Python%20lecture.ipynb)
-
+         - To launch the notebooks, launch in a conda console
+             - `jupyter notebook "python/Python lecture.ipynb"`
+             
 * 14h00 - 17h00 : 
-    - 45min : Plant Architecture - Video - Evelyne Costes (EC)
+    - 45min : Plant Architecture - [Video](https://video.umontpellier.fr/video/7743-hbma312-architecture-des-plantes/) - Evelyne Costes (EC)
          - Plant organisation (meristems, phytomers, growth units, axis, crown, ...)
          - Ramification, Growth, Reiteration
          - Architectural Models
@@ -41,11 +43,11 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1Juaml
 
 * 9h - 12h : 
    - 1h30 : The L-System formalism - Video - FB
+      - [Part 1](https://video.umontpellier.fr/video/7717-hbma312-lsystems-part-1/) - [Part 2](https://video.umontpellier.fr/video/7718-hbma312-lsystems-part-2/) - [Part 3](https://video.umontpellier.fr/video/7720-hbma312-lsystems-part-3/) - [Part 4](https://video.umontpellier.fr/video/7721-hbma312-lsystems-part-4/)
       - Topological representations of plants with strings.
       - Turtle geometric interpretation.
       - Rules of production, decomposition, sensitive to contexts, to the environment ...
       - Fractals
-      - [Part 1](https://video.umontpellier.fr/video/7717-hbma312-lsystems-part-1/) - [Part 2](https://video.umontpellier.fr/video/7718-hbma312-lsystems-part-2/) - [Part 3](https://video.umontpellier.fr/video/7720-hbma312-lsystems-part-3/) - [Part 4](https://video.umontpellier.fr/video/7721-hbma312-lsystems-part-4/)
    - 15min - Questions - FB
    - 1h15 : Practical work and exercises - FB & CP
       - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/lsystem/L-systems.ipynb)
@@ -60,10 +62,10 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1Juaml
       
    - 15min : Questions - FB
    - 1H : Practical work and exercises - FB & BP
-      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Organs.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Architecture.ipynb)
+      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/ArchiModelling.ipynb), [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Organs.ipynb) and [notebook 3](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Architecture.ipynb)
       - To launch the notebooks, launch in a conda console
+           - `jupyter notebook "archimodelling/ArchiModelling.ipynb"`
            - `jupyter notebook "archimodelling/Apple Tree Simulation - Organs.ipynb"`
-      - To launch the notebooks, launch in a conda console
            - `jupyter notebook "archimodelling/Apple Tree Simulation - Architecture.ipynb"`
    - 1h : Modelling project - FB, CP, RP, BP, CF
 
@@ -73,6 +75,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9
 
 * 9h - 12h : 
    - 45min : Ecophysiological processes. From crop model to FSPM  - Video - BP
+        - [Part 1](https://video.umontpellier.fr/video/7753-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-1/) - [Part 2](https://video.umontpellier.fr/video/7752-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-2/)
         - Light interception, photosynthesis, Carbon Balance, Water Balance
         - Crop vs FSPM approaches
    - 15min : Questions - BP
