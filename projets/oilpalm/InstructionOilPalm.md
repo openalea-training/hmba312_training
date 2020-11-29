@@ -14,8 +14,7 @@ Oil palm is a perennial plant which architecture follows the Corner model, which
 
 Mature oil palm leaves are compound leaves with an even-pinnate arrangement. The leaf is composed by a petiole and a rachis that bears leaflets, also called pinnae. Both sides of the leaves have almost a similar number of leaflets but their disposition along the rachis is irregular. Reference points can be observed on rachis (A=leaf tip, B=transition shape of cross section  and C= transition between petiole and rachis). At adult stage, leaf length can reach 10 meters and bears approximately 250 to 350 leaflets.
 
-<img src="./leaf.JPG" width=400>
-
+<img src="./leaf.JPG" width=600>
 
 
 ## Modelling oil palm architetcure from allometric reationships
