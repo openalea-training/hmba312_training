@@ -62,7 +62,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1Juaml
       
    - 15min : Questions - FB
    - 1H : Practical work and exercises - FB & BP
-      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/ArchiModelling.ipynb)[notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Organs.ipynb) and [notebook 3](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Architecture.ipynb)
+      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/ArchiModelling.ipynb), [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Organs.ipynb) and [notebook 3](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Architecture.ipynb)
       - To launch the notebooks, launch in a conda console
            - `jupyter notebook "archimodelling/ArchiModelling.ipynb"`
            - `jupyter notebook "archimodelling/Apple Tree Simulation - Organs.ipynb"`
