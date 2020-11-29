@@ -43,11 +43,11 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1Juaml
 
 * 9h - 12h : 
    - 1h30 : The L-System formalism - Video - FB
+      - [Part 1](https://video.umontpellier.fr/video/7717-hbma312-lsystems-part-1/) - [Part 2](https://video.umontpellier.fr/video/7718-hbma312-lsystems-part-2/) - [Part 3](https://video.umontpellier.fr/video/7720-hbma312-lsystems-part-3/) - [Part 4](https://video.umontpellier.fr/video/7721-hbma312-lsystems-part-4/)
       - Topological representations of plants with strings.
       - Turtle geometric interpretation.
       - Rules of production, decomposition, sensitive to contexts, to the environment ...
       - Fractals
-      - [Part 1](https://video.umontpellier.fr/video/7717-hbma312-lsystems-part-1/) - [Part 2](https://video.umontpellier.fr/video/7718-hbma312-lsystems-part-2/) - [Part 3](https://video.umontpellier.fr/video/7720-hbma312-lsystems-part-3/) - [Part 4](https://video.umontpellier.fr/video/7721-hbma312-lsystems-part-4/)
    - 15min - Questions - FB
    - 1h15 : Practical work and exercises - FB & CP
       - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/lsystem/L-systems.ipynb)
@@ -75,9 +75,9 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9
 
 * 9h - 12h : 
    - 45min : Ecophysiological processes. From crop model to FSPM  - Video - BP
+        - [Part 1](https://video.umontpellier.fr/video/7753-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-1/) - [Part 2](https://video.umontpellier.fr/video/7752-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-2/)
         - Light interception, photosynthesis, Carbon Balance, Water Balance
         - Crop vs FSPM approaches
-        - [Part 1](https://video.umontpellier.fr/video/7753-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-1/) - [Part 2](https://video.umontpellier.fr/video/7752-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-2/)
    - 15min : Questions - BP
    - 45min : Light modelling, RUE and photosynthesis - Video - Christian Fournier (CF)
    - 15min : Questions - CF
