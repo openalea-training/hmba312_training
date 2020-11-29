@@ -19,9 +19,11 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
     - 20min : Questions - CP
     - 1h30 : Exercises (CP, FB, CF)
          - see the [corresponding notebook](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/python/Python%20lecture.ipynb)
-
+         - To launch the notebooks, launch in a conda console
+             - `jupyter notebook "python/Python lecture.ipynb"`
+             
 * 14h00 - 17h00 : 
-    - 45min : Plant Architecture - Video - Evelyne Costes (EC)
+    - 45min : Plant Architecture - [Video](https://video.umontpellier.fr/video/7743-hbma312-architecture-des-plantes/) - Evelyne Costes (EC)
          - Plant organisation (meristems, phytomers, growth units, axis, crown, ...)
          - Ramification, Growth, Reiteration
          - Architectural Models
@@ -60,10 +62,10 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1Juaml
       
    - 15min : Questions - FB
    - 1H : Practical work and exercises - FB & BP
-      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Organs.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Architecture.ipynb)
+      - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/ArchiModelling.ipynb)[notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Organs.ipynb) and [notebook 3](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/archimodelling/Apple%20Tree%20Simulation%20-%20Architecture.ipynb)
       - To launch the notebooks, launch in a conda console
+           - `jupyter notebook "archimodelling/ArchiModelling.ipynb"`
            - `jupyter notebook "archimodelling/Apple Tree Simulation - Organs.ipynb"`
-      - To launch the notebooks, launch in a conda console
            - `jupyter notebook "archimodelling/Apple Tree Simulation - Architecture.ipynb"`
    - 1h : Modelling project - FB, CP, RP, BP, CF
 
@@ -75,6 +77,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9
    - 45min : Ecophysiological processes. From crop model to FSPM  - Video - BP
         - Light interception, photosynthesis, Carbon Balance, Water Balance
         - Crop vs FSPM approaches
+        - [Part 1](https://video.umontpellier.fr/video/7753-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-1/) - [Part 2](https://video.umontpellier.fr/video/7752-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-2/)
    - 15min : Questions - BP
    - 45min : Light modelling, RUE and photosynthesis - Video - Christian Fournier (CF)
    - 15min : Questions - CF
