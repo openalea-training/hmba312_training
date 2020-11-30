@@ -19,7 +19,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
          - visualization (matplotlib)
     - 15mn: Modeling environment (conda, notebooks) and installation
     - 1h15 : Exercises (CP, FB, CF)
-         - see the [corresponding notebook](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/python/Python%20lecture.ipynb)
+         - see the [corresponding notebook](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/python/PythonLecture.ipynb)
          - To launch the notebooks, launch in a conda console
              - `jupyter notebook "python/PythonLecture.ipynb"`
              
