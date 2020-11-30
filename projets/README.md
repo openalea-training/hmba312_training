@@ -20,6 +20,9 @@ The list of proposed fruiting trees to model with related information are given 
 
 - *Peach tree*.
     - Main adviser: Benoit Pallas
+    - Integrating simulation of architectural development and source-sink behaviour of peach trees by incorporating Markov chains and physiological organ function submodels into L-PEACH. Lopez G et al. 2008. Functional Plant Biology 35: 761-771.
+    - L-PEACH: A Computer-based Model to Understand How Peach Trees Grow. Lopez G. et al. 2010. HortTechnology. 20: 983-990.
+    - Long proleptic and sylleptic shoots in peach (Prunus persica L. Batsch) trees have similar, predetermined, maximum numbers of nodes and bud fate patterns. Pratts-Linas et al. 2019. Annals of Botany. 123: 993-1004.
     
 - *Vine* 
     - Main adviser: Christian Fournier
