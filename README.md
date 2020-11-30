@@ -10,15 +10,9 @@
 Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) 
  
 * 9h - 12h00 : 
-<<<<<<< HEAD
    - 15min : [Class presentation](./pdf_lessons/0-presentation-cours.pdf) - Frédéric Boudon (FB)
-   - 15min : The modelling approach - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - Christophe Pradal (CP)
-   - 1h : Introduction to programming - Video - CP
-=======
-   - 15min : Class presentation - Frédéric Boudon (FB)
    - 15min : The modelling approach - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - [pdf](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/1_modelling_approach_pradal.pdf) - Christophe Pradal (CP)
-   - 1h : Introduction to programming - [Video](https://video.umontpellier.fr/video/7772-hbma312-le-language-de-modelisation-python/) -  [pdf](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/2_python_pradal.pdf) - CP
->>>>>>> e174478e540e94f1b5a36a536d8e876c6b46df60
+   - 1h : [Introduction to programming](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/2_python_pradal.pdf) - [Video](https://video.umontpellier.fr/video/7772-hbma312-le-language-de-modelisation-python/) - CP
       - The Python modelling language
          - types, control statements, functions, modules
          - numeric computation (numpy, scipy), data analysis (dataframe, pandas)
