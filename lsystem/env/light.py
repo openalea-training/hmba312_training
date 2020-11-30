@@ -16,7 +16,7 @@
 
 import sunDome as sd
 import openalea.plantgl.all as pgl
-from math import radians, sin, pi
+from math import radians, sin, pi, ceil
 
 # Light Fractalysis module: Computation of direct light in a scene
 #
@@ -221,7 +221,7 @@ def directionalInterception(scene, directions, north = 0, horizontal = False, sc
       nbpixpershape, pixsize = values
       pixsize = pixsize*pixsize
       for key,val in nbpixpershape:
-        if shapeLight.has_key(key):
+        if key in shapeLight:
           shapeLight[key] += val*pixsize*wg
         else:
           shapeLight[key] = val*pixsize*wg
@@ -234,6 +234,63 @@ def directionalInterception(scene, directions, north = 0, horizontal = False, sc
 
   return shapeLight
 
+
+def getProjectionMatrix(forward, up = pgl.Vector3(0,0,1)):
+    forward.normalize()
+    up.normalize();
+    side = pgl.cross(up, forward);
+    side.normalize();
+    up = pgl.cross(forward, side);
+    up.normalize();
+    return pgl.Matrix3(side, up, forward).inverse()
+
+
+def projectedBBox(bbx, direction, up):
+    from itertools import product
+    proj = getProjectionMatrix(direction,up)
+    pts = [proj*pt for pt in product([bbx.getXMin(),bbx.getXMax()],[bbx.getYMin(),bbx.getYMax()],[bbx.getZMin(),bbx.getZMax()])]
+    projbbx = pgl.BoundingBox(pgl.PointSet(pts))
+    return projbbx
+
+
+def directionalInterception(scene, directions, north = 0, horizontal = False, screenresolution = 1, verbose = False, multithreaded = True):
+
+  bbox=pgl.BoundingBox( scene )
+  d_factor = max(bbox.getXRange() , bbox.getYRange() , bbox.getZRange())
+  shapeLight = {}
+  pixsize = screenresolution*screenresolution
+
+  for az, el, wg in directions:
+    if( az != None and el != None):
+        dir = azel2vect(az, el, north)
+        if horizontal :
+            wg /= sin(radians(el))
+
+    up = dir.anOrthogonalVector()
+    pjbbx = projectedBBox(bbox, dir, up)
+    worldWidth = pjbbx.getXRange()
+    worldheight = pjbbx.getYRange()
+    w, h = max(2,int(ceil(worldWidth/screenresolution))+1), max(2,int(ceil(worldheight/screenresolution))+1)
+    if verbose : 
+        print('direction :', dir)
+        print('image size :', w,'x',h)
+    worldWidth = w * screenresolution
+    worldheight = h * screenresolution
+    noid = pgl.Shape.NOID
+    z = pgl.ZBufferEngine(w,h,noid)
+    z.multithreaded = multithreaded
+    z.setOrthographicCamera(-worldWidth/2., worldWidth/2., -worldheight/2., worldheight/2., d_factor , 3*d_factor)
+    eyepos = bbox.getCenter() - dir* d_factor * 2
+    z.lookAt(eyepos, bbox.getCenter(), up) 
+    z.process(scene)
+    img = z.getImage()
+    values = img.histogram()
+    if not values is None:
+        for shid, val in values:
+            if shid != noid:
+                shapeLight[shid] = shapeLight.get(shid,0) + val*pixsize*wg
+  
+  return shapeLight
 
 def scene_irradiance(scene, directions, north = 0, horizontal = False, scene_unit = 'm', screenwidth = 600):
     """

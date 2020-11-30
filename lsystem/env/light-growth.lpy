@@ -1,5 +1,7 @@
 from math import *
 from openalea.plantgl.all import *
+from imp import reload
+import light ; reload(light)
 from light import directInterception, directionalInterception, totalInterception,azel2vect
 from sunDome import getDirectLight, getSkyTurtleSize, getSkyTurtleAt 
 import matplotlib.pyplot as plt
@@ -102,7 +104,7 @@ A(t,cpt):
     nproduce I(0.001)
     nproduce /(phy) 
     whorlangle = 360 / whorlsize
-    for i in xrange(whorlsize):
+    for i in range(whorlsize):
       nproduce [ /(whorlangle*i) ^(insangle) Petiole(t) Leaf(t,0,[0.1],[0.],[0.0]) ]
     nproduce A(t+dt,T)
   else: produce A(t+dt,cpt-dt)
@@ -177,7 +179,7 @@ LightSource :
   elif LightModel == LightModelType.OVERCAST:
     # First draw the sky turtle positions 
     sunPos = []
-    for i in xrange(getSkyTurtleSize()):
+    for i in range(getSkyTurtleSize()):
       sunPos.append( getSkyTurtleAt(i))
     for i in range(len(sunPos)):
       #print sunPos[i][0],sunPos[i][1], sunPos[i][2]
@@ -228,9 +230,9 @@ def EndEach(lstring,lscene):
     # Sum-up light coming from the whole sky vault during a day at a given 
     # latitude and longitude 
     res = totalInterception(lscene, latitude, longitude, julianDay)
-
+  lstringsize = len(lstring)
   for k,v in res.items():
-    if lstring[k].name == 'Leaf':
+    if k < lstringsize and lstring[int(k)].name == 'Leaf':
       lstring[k].light.append(v)
       if v < minlight : minlight = v
       if v > maxlight : maxlight = v  
@@ -242,7 +244,7 @@ def End(lstring, lscene):
   plt.figure(1)
   plt.clf()
   t0lists = []
-  for k in xrange(len(lstring)):
+  for k in range(len(lstring)):
     if lstring[k].name == 'Leaf':
       t0 = lstring[k].t0
       lifetime = lstring[k].lifetime
@@ -250,7 +252,7 @@ def End(lstring, lscene):
       y = []
       lifetimetics = int(lifetime / dt)
       t0tics = int(t0 / dt)
-      for t in xrange(lifetimetics):
+      for t in range(lifetimetics):
         #print "k, t0, lifetime", k, t0tics, lifetimetics #, t0, lifetime
         x.append(t0tics+t)
         #print lstring[k].carbon
@@ -267,16 +269,16 @@ def End(lstring, lscene):
 
   # Total photosynthesis cumulated by the plant:
   totalphot = 0
-  for k in xrange(len(lstring)):
+  for k in range(len(lstring)):
     if lstring[k].name == 'Leaf':
       totalphot += lstring[k].cumcarbon[-1]
-  print "Total Photosynthesis during simulation by all leaves: ", totalphot
+  print("Total Photosynthesis during simulation by all leaves: ", totalphot)
 
   # plot instantaneous photosynthesis
   plt.figure(2)
   plt.clf()
   t0lists = []
-  for k in xrange(len(lstring)):
+  for k in range(len(lstring)):
     if lstring[k].name == 'Leaf':
       t0 = lstring[k].t0
       lifetime = lstring[k].lifetime
@@ -284,7 +286,7 @@ def End(lstring, lscene):
       y = []
       lifetimetics = int(lifetime / dt)
       t0tics = int(t0 / dt)
-      for t in xrange(lifetimetics):
+      for t in range(lifetimetics):
         #print "k, t0, lifetime", k, t0tics, lifetimetics #, t0, lifetime
         x.append(t0tics+t)
         #print lstring[k].carbon
@@ -367,7 +369,7 @@ def __initialiseContext__(context):
 	    ctrlPointList = pgl.Point3Array([(-0.5, 0, 1),(-0.166667, -0.140909, 1),(0.171212, -0.136364, 1),(0.5, 0, 1)]) , 
 	    )
 	section.name = "section"
-	panel_0 = ({'active': True, 'visible': True, 'name': 'Panel'},[('Function',LUE),('NurbsPatch',leafshape),('Curve2D',nerve),('Function',width),('Curve2D',section)])
+	panel_0 = ({'name': 'Panel', 'active': True, 'visible': True},[('Function',LUE),('NurbsPatch',leafshape),('Curve2D',nerve),('Function',width),('Curve2D',section)])
 	parameterset = [panel_0,]
 	context["__functions__"] = [('LUE',LUE),('width',width),]
 	context["__curves__"] = [('nerve',nerve),('section',section),]
@@ -377,7 +379,7 @@ def __initialiseContext__(context):
 	context["nerve"] = nerve
 	context["width"] = pgl.QuantisedFunction(width)
 	context["section"] = section
+__authors__ = 'C. Godin, F. Boudon'
+__institutes__ = 'INRIA - CIRAD Virtual Plants'
 __copyright__ = 'open-source GPL'
 __description__ = 'Authors:\nC. Godin\nF. Boudon\n\n(c) Inria VirtualPlants team joitn with CIRAD and INRA\n\nSimulation of direct light interception and associated photosynthesis during growth\n\nMini-projects:\n\n- Analyse the impact of the latitude on the photosynthesis\n- Analyse the impact of the plant architecture on the photosynthesis (petiole length, internode length, opening rate of leaves, leaf shape, phyllotaxis, ...)\n- Analyze the influence of the plant architecture model on the performance of the plant \n- Analyze the influence of the photosynthetic function (LUE) shade/light plants on the \n- Analyse the impact of the sun position on the growth\n- Analyse the difference between overcast sky and clear sky\n'
-__institutes__ = 'INRIA - CIRAD Virtual Plants'
-__authors__ = 'C. Godin, F. Boudon'

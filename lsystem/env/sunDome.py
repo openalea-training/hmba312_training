@@ -57,7 +57,7 @@ def getSkyTurtleSize():
   return len(azimuths)
 
 def getSkyTurtleDirections():
-  return [ (azimuth[i],elevation[i], w[i] ) for i in xrange(getSkyTurtleSize()) ]
+  return [ (azimuth[i],elevation[i], w[i] ) for i in range(getSkyTurtleSize()) ]
 
 def getDirectLight( latitude, longitude, jourJul, startH, stopH, step=30, decalSun = 1, decalGMT = 0):
   # CG: Computes the percentage of radiative energy received by a point at the surface for each sun elevation during the day
@@ -80,7 +80,7 @@ def getDirectLight( latitude, longitude, jourJul, startH, stopH, step=30, decalS
   for s in w:
     tot+= s
   if round(tot,1) != 1.0:
-    print "sum weight : ", tot
+    print("sum weight : ", tot)
   return [ ( around(degrees(az[i]),2), around(degrees(el[i]), 2), w[i] ) for i in range(len(az)) ]
 
 def plotDirect( latitude, longitude, jourJul, startH, stopH, step=30, decalSun = 1, decalGMT = 0):
