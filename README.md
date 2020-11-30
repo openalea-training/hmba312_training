@@ -57,6 +57,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1Juaml
 
 * 14h00 - 17h00 : 
    - 45min : Simulating plants with L-systems - Video - FB
+      - [Part 1](https://video.umontpellier.fr/video/7817-hbma312-modelisation-de-larchitecture-des-fruitiers-part-1/) - [Part 2](https://video.umontpellier.fr/video/7818-hbma312-modelisation-de-larchitecture-des-fruitiers-part-2/) 
       - Rules of organ development using a thermal time model
       - Stochastic modelling of budburst
       - Branch geometry (empirical model, mechanistic model)
