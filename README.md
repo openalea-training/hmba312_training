@@ -158,7 +158,7 @@ In a convenient directory, you will now download the training material using the
     cd hbma312_training
     python setup.py develop
 
-To update the trainaing material during the training
+To update the training material during the training
 
     cd /path/to/your/documents/hbma312_training
     git pull
