@@ -24,7 +24,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
              - `jupyter notebook "python/PythonLecture.ipynb"`
              
 * 14h00 - 17h00 : 
-    - 45min : Plant Architecture - [Video](https://video.umontpellier.fr/video/7743-hbma312-architecture-des-plantes/) - Evelyne Costes (EC)
+    - 45min : [Plant Architecture](./pdf_lessons/3-Architecture_Vegetale_module_BFP_english_slides.pdf) - [Video](https://video.umontpellier.fr/video/7743-hbma312-architecture-des-plantes/) - Evelyne Costes (EC)
          - Plant organisation (meristems, phytomers, growth units, axis, crown, ...)
          - Ramification, Growth, Reiteration
          - Architectural Models
