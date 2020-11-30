@@ -97,6 +97,10 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFR
      - Concepts and methods
    - 15min : Questions
    - 1H : Practical work and exercises.  - RP & CF
+         - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/sensitivityanalysis/TD_SensitivityAnalysis_Part1.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/sensitivityanalysis/TD_SensitivityAnalysis_Part2.ipynb)
+         - To launch the notebooks, launch in a conda console
+             - `jupyter notebook "sensitivityanalysis/TD_SensitivityAnalysis_Part1.ipynb"`
+             - `jupyter notebook "sensitivityanalysis/TD_SensitivityAnalysis_Part2.ipynb"`
    - 1h : Modelling project - FB, CP, RP, BP, CF
 
 * 14h - 17h : 
