@@ -29,7 +29,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
          - Ramification, Growth, Reiteration
          - Architectural Models
     - 15min : Questions - EC
-    - 50min : Architecture phenotyping - Video - FB
+    - 50min : [Architecture phenotyping](./pdf_lessons/4-phenotyping.pdf) - Video - FB
          - [Part 1](https://video.umontpellier.fr/video/7564-hbma312-phenotypage-des-plantes-part-1/) - [Part 2](https://video.umontpellier.fr/video/7567-hbma312-phenotypage-des-plantes-part-2/) - [Part 3](https://video.umontpellier.fr/video/7566-hbma312-phenotypage-des-plantes-part-3/) - [Part 4](https://video.umontpellier.fr/video/7569-hbma312-phenotypage-des-plantes-part-4/) - [Part 5](https://video.umontpellier.fr/video/7568-hbma312-phenotypage-des-plantes-part-5/)
     - 15min : Questions - FB
     - 1h : Practical work and exercises : Analysis of LIDAR data - FB & Benoît Pallas (BP)
@@ -43,7 +43,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
 Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0NFTVpxN0x0UT09)
 
 * 9h - 12h : 
-   - 1h30 : The L-System formalism - Video - FB
+   - 1h30 : [The L-System formalism](./pdf_lessons/5-Lsystems.pdf) - Video - FB
       - [Part 1](https://video.umontpellier.fr/video/7717-hbma312-lsystems-part-1/) - [Part 2](https://video.umontpellier.fr/video/7718-hbma312-lsystems-part-2/) - [Part 3](https://video.umontpellier.fr/video/7720-hbma312-lsystems-part-3/) - [Part 4](https://video.umontpellier.fr/video/7721-hbma312-lsystems-part-4/)
       - Topological representations of plants with strings.
       - Turtle geometric interpretation.
