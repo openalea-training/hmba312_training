@@ -10,17 +10,16 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
 * 9h - 12h00 : 
    - 15min : Class presentation - Frédéric Boudon (FB)
    - 15min : The modelling approach - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - Christophe Pradal (CP)
-   - 40min : Introduction to programming - Video - CP
+   - 1h : Introduction to programming - Video - CP
       - The Python modelling language
          - types, control statements, functions, modules
          - numeric computation (numpy, scipy), data analysis (dataframe, pandas)
          - visualization (matplotlib)
-      - Modeling environment (conda, notebooks)
-    - 20min : Questions - CP
-    - 1h30 : Exercises (CP, FB, CF)
+    - 15mn: Modeling environment (conda, notebooks) and installation
+    - 1h15 : Exercises (CP, FB, CF)
          - see the [corresponding notebook](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/python/Python%20lecture.ipynb)
          - To launch the notebooks, launch in a conda console
-             - `jupyter notebook "python/Python lecture.ipynb"`
+             - `jupyter notebook "python/PythonLecture.ipynb"`
              
 * 14h00 - 17h00 : 
     - 45min : Plant Architecture - [Video](https://video.umontpellier.fr/video/7743-hbma312-architecture-des-plantes/) - Evelyne Costes (EC)
