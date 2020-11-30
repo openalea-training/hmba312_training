@@ -3,14 +3,22 @@
 
 ## Online: Zoom meeting
 
+## Live Tutorials on Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/openalea-training/hbma312_training/HEAD)
+
 ## Monday 30/11 : Prerequisite
 
 Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) 
  
 * 9h - 12h00 : 
+<<<<<<< HEAD
    - 15min : [Class presentation](./pdf_lessons/0-presentation-cours.pdf) - Frédéric Boudon (FB)
    - 15min : The modelling approach - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - Christophe Pradal (CP)
    - 1h : Introduction to programming - Video - CP
+=======
+   - 15min : Class presentation - Frédéric Boudon (FB)
+   - 15min : The modelling approach - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - [pdf](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/1_modelling_approach_pradal.pdf) - Christophe Pradal (CP)
+   - 1h : Introduction to programming - [Video](https://video.umontpellier.fr/video/7772-hbma312-le-language-de-modelisation-python/) -  [pdf](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/2_python_pradal.pdf) - CP
+>>>>>>> e174478e540e94f1b5a36a536d8e876c6b46df60
       - The Python modelling language
          - types, control statements, functions, modules
          - numeric computation (numpy, scipy), data analysis (dataframe, pandas)
@@ -97,6 +105,10 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFR
      - Concepts and methods
    - 15min : Questions
    - 1H : Practical work and exercises.  - RP & CF
+         - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/sensitivityanalysis/TD_SensitivityAnalysis_Part1.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/sensitivityanalysis/TD_SensitivityAnalysis_Part2.ipynb)
+         - To launch the notebooks, launch in a conda console
+             - `jupyter notebook "sensitivityanalysis/TD_SensitivityAnalysis_Part1.ipynb"`
+             - `jupyter notebook "sensitivityanalysis/TD_SensitivityAnalysis_Part2.ipynb"`
    - 1h : Modelling project - FB, CP, RP, BP, CF
 
 * 14h - 17h : 
@@ -153,5 +165,10 @@ In a convenient directory, you will now download the training material using the
     git clone https://github.com/openalea-training/hbma312_training.git
     cd hbma312_training
     python setup.py develop
+
+To update the training material during the training
+
+    cd /path/to/your/documents/hbma312_training
+    git pull
 
 
