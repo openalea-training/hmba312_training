@@ -86,6 +86,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9
 
 * 14h00 - 17h00 : 
    - 45min : Recent work on carbon allocation model / signaling in apple tree - Video - Benoit Pallas
+        - [Part 1](https://video.umontpellier.fr/video/7780-hbma312-allocation-du-carbone-et-signalisation-part-1/) - [Part 2](https://video.umontpellier.fr/video/7782-hbma312-allocation-du-carbone-et-signalisation-part-2/) - [Part 3](https://video.umontpellier.fr/video/7784-hbma312-allocation-du-carbone-et-signalisation-part-3/)   
    - 15min : Questions - BP
    - 1h : Practical work on carbon allocation model - BP & FB
    - 1h : Modelling project - FB, CP, RP, BP, CF
