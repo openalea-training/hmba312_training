@@ -3,6 +3,8 @@
 
 ## Online: Zoom meeting
 
+## Live Tutorials on Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/openalea-training/hbma312_training/HEAD)
+
 ## Monday 30/11 : Prerequisite
 
 Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) 
