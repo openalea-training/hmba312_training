@@ -8,7 +8,7 @@
 Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) 
  
 * 9h - 12h00 : 
-   - 15min : Class presentation - Frédéric Boudon (FB)
+   - 15min : [Class presentation](./pdf_lessons/0-presentation-cours.pdf) - Frédéric Boudon (FB)
    - 15min : The modelling approach - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - Christophe Pradal (CP)
    - 1h : Introduction to programming - Video - CP
       - The Python modelling language
