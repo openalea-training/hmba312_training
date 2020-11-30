@@ -11,7 +11,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
  
 * 9h - 12h00 : 
    - 15min : [Class presentation](./pdf_lessons/0-presentation-cours.pdf) - Frédéric Boudon (FB)
-   - 15min : The modelling approach - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - [pdf](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/1_modelling_approach_pradal.pdf) - Christophe Pradal (CP)
+   - 15min : [The modelling approach](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/1_modelling_approach_pradal.pdf) - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - Christophe Pradal (CP)
    - 1h : [Introduction to programming](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/2_python_pradal.pdf) - [Video](https://video.umontpellier.fr/video/7772-hbma312-le-language-de-modelisation-python/) - CP
       - The Python modelling language
          - types, control statements, functions, modules
