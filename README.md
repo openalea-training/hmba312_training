@@ -3,14 +3,16 @@
 
 ## Online: Zoom meeting
 
+## Live Tutorials on Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/openalea-training/hbma312_training/HEAD)
+
 ## Monday 30/11 : Prerequisite
 
 Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) 
  
 * 9h - 12h00 : 
-   - 15min : Class presentation - Frédéric Boudon (FB)
-   - 15min : The modelling approach - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - Christophe Pradal (CP)
-   - 1h : Introduction to programming - [Video](https://video.umontpellier.fr/video/7772-hbma312-le-language-de-modelisation-python/) - CP
+   - 15min : [Class presentation](./pdf_lessons/0-presentation-cours.pdf) - Frédéric Boudon (FB)
+   - 15min : [The modelling approach](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/1_modelling_approach_pradal.pdf) - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - Christophe Pradal (CP)
+   - 1h : [Introduction to programming](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/2_python_pradal.pdf) - [Video](https://video.umontpellier.fr/video/7772-hbma312-le-language-de-modelisation-python/) - CP
       - The Python modelling language
          - types, control statements, functions, modules
          - numeric computation (numpy, scipy), data analysis (dataframe, pandas)
