@@ -19,7 +19,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
     - 1h15 : Exercises (CP, FB, CF)
          - see the [corresponding notebook](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/python/Python%20lecture.ipynb)
          - To launch the notebooks, launch in a conda console
-             - `jupyter notebook "python/Python lecture.ipynb"`
+             - `jupyter notebook "python/PythonLecture.ipynb"`
              
 * 14h00 - 17h00 : 
     - 45min : Plant Architecture - [Video](https://video.umontpellier.fr/video/7743-hbma312-architecture-des-plantes/) - Evelyne Costes (EC)
