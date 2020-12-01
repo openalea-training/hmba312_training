@@ -71,8 +71,6 @@
 
 ## Wednesday 02/12 : Modelling functioning 
 
-Meeting [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COHJNUlQyRi9DZz09)
-
 * 9h - 12h : 
    - 45min : Ecophysiological processes. From crop model to FSPM  - Video - BP
         - [Part 1](https://video.umontpellier.fr/video/7753-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-1/) - [Part 2](https://video.umontpellier.fr/video/7752-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-2/)
@@ -120,6 +118,13 @@ During this training, some time is devoted to the realization of an architectura
 The list of proposed fruiting trees to model with related information are given [here](./projets/README.md)
 
 Groups of two should be constituted and each group will work on a different tree specie. To determine assignment, you need to fill the following [form](https://framadate.org/Ztv1NOQCl7Qy3FT3). If two people are already assigned to a tree specie, the specie is no more selectable.
+
+### Zoom session for projects:
+
+Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0NFTVpxN0x0UT09)
+Meeting [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COHJNUlQyRi9DZz09)
+Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG5jY0NmdjRndz09)
+
 
 # Modelling environment
 
