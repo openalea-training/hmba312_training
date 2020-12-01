@@ -26,6 +26,9 @@ The list of proposed fruiting trees to model with related information are given 
     
 - *Grapevine* 
     - Main adviser: Christian Fournier
+	- [Paper1](https://bsppjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/j.1365-3059.2007.01783.x).
+	- [Paper2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2710267/pdf/mcm170.pdf).
+
 
 - *Kiwi vine*.
     - Main adviser: Christophe Pradal
