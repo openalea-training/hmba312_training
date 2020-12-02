@@ -54,7 +54,7 @@
            - `jupyter notebook lsystem/L-systems.ipynb`
 
 * 14h00 - 17h00 : 
-   - 45min : Simulating plants with L-systems - Video - FB
+   - 45min : [Simulating fruit tree with L-systems](./pdf_lessons/6-ModellingArchi.pdf) - Video - FB
       - [Part 1](https://video.umontpellier.fr/video/7817-hbma312-modelisation-de-larchitecture-des-fruitiers-part-1/) - [Part 2](https://video.umontpellier.fr/video/7818-hbma312-modelisation-de-larchitecture-des-fruitiers-part-2/) 
       - Rules of organ development using a thermal time model
       - Stochastic modelling of budburst
@@ -77,9 +77,14 @@
         - Light interception, photosynthesis, Carbon Balance, Water Balance
         - Crop vs FSPM approaches
    - 15min : Questions - BP
-   - 45min : Light modelling, RUE and photosynthesis - Video - Christian Fournier (CF)
+   - 45min : Modelling Light and photosynthesis: Christian Fournier (CF)
+        - [Introduction](./pdf_lessons/7-0_light_phothosynthesis_intro.pdf) - [Video](https://video.umontpellier.fr/video/7867-hbma312-light-modelling-rue-and-photosynthesis-part-1/) - CF
+        - [Light](./pdf_lessons/7-1_modelling_light.pdf) - [Video](https://video.umontpellier.fr/video/7885-hbma312-light-interception/) - CF
+        - [Photosynthesis](./pdf_lessons/7-2_modelling_photosynthesis.pdf) - [Video](https://video.umontpellier.fr/video/7884-hbma312-photosynthese/) - CF
    - 15min : Questions - CF
    - 1h : Practical work and exercises on light interception and photosynthesis - CF & RP
+        - To launch the notebooks, launch in a conda console
+           - `jupyter notebook "light/"`
 
 * 14h00 - 17h00 : 
    - 45min : Recent work on carbon allocation model / signaling in apple tree - Video - Benoit Pallas

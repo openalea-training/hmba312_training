@@ -5,6 +5,7 @@ exec(notebook('Apple Tree Simulation - Architecture.ipynb'))
 from math import *
 from openalea.plantgl.all import Revolution
 from sensitivityanalysis_bash import plant_irradiance, illuminate
+import meteo
 
 from random import seed
 seed(int(SEED))
@@ -39,7 +40,7 @@ def StartEach():
   else:
     #useGroup(2 if getIterationNb() % 3 == 0 else 0)
     useGroup(0)
-  if cdate.month in range(11,13)+range(1,4):
+  if cdate.month in list(range(11,13))+list(range(1,4)):
     deltatime = max(TIMESTEP,30)
   else:
     deltatime = TIMESTEP
@@ -49,12 +50,12 @@ def StartEach():
 
 def EndEach(lstring, lscene):
   if isFrameDisplayed():
-    print 'Total Leaf Area :',totalleafarea,' for ', totalleafnb,'leaves.'
+    print('Total Leaf Area :',totalleafarea,' for ', totalleafnb,'leaves.')
     
     if LIGHTON:
         cs, raw, agg = illuminate(lscene, isolated=True)
         res = plant_irradiance(lstring, lscene, illuminated = (cs, raw, agg))
-        print res
+        print (res)
         scene, _ = cs.plot(raw['Ei'], minval=0, maxval=1, display=False)
         return scene
 
@@ -90,8 +91,8 @@ Axiom:
   if not ORCHARD:
     nproduce  Meristem(init_meristem(Proleptic, TrunkGU))
   else:
-    for i in xrange(2):
-      for j in xrange(5):
+    for i in range(2):
+      for j in range(5):
         nproduce  [ @M(300*i,150*j,0) Meristem(init_meristem(Proleptic, TrunkGU))]
         
   produce SimuInfo
@@ -106,7 +107,7 @@ Meristem(p):
     p.processed_date = cdate
     previousnbmetamer = p.mp.nbmetamer
     nbnewmetamer = p.mp.accumulate_range(p.init_date, cdate)
-    for i in xrange(nbnewmetamer):
+    for i in range(nbnewmetamer):
       rank =  previousnbmetamer+i
       normalizedrank = rank / p.mp.nbfinalmetamer
       nproduce Internode(ParameterSet(length=0.01, finallength = internode_length(rank = rank, maxlength=INTERNODE_FLENGTH), width=0.01, ttime = 0, nbchildren = 1))
@@ -219,7 +220,7 @@ def __initialiseContext__(context):
 	Color_11 = pgl.Material("Color_11" , ambient = (131,127,57) , diffuse = 1.22137 , )
 	Color_11.name = "Color_11"
 	context.turtle.setMaterial(11,Color_11)
-	scalars = [('SEED', 'Integer', 0, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.01, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 3.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 2, 1, 100), ('LIGHTON', 'Bool', False), ('ORCHARD', 'Bool', False), ('NBPLANTS', 'Integer', 3, 1, 10)]
+	scalars = [('SEED', 'Integer', 0, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.01, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 3.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 2, 1, 100), ('LIGHTON', 'Bool', False), ('ORCHARD', 'Bool', True)]
 	context["__scalars__"] = scalars
 	for s in scalars:
 		if not s[1] == "Category" : context[s[0]] = s[2]
@@ -246,7 +247,7 @@ def __initialiseContext__(context):
 	    pgl.Point4Matrix([[(-0.0241355, -0.0549754, -0.00804807, 1), (-0.00877065, -0.00933309, 0.00100194, 1), (0.0221632, 0.0405477, -0.00898557, 1), (-0.00223729, -0.00247516, 0.000385988, 1)], [(0.314084, -0.472921, 0.392759, 1), (0.000957513, 0.000400347, 0.33376, 1), (-0.00092555, 0.00517653, 0.332921, 1), (0.408856, 0.483731, 0.413612, 1)], [(0.329337, -0.501345, 0.730665, 1), (0.000326354, 0.0164005, 0.665257, 1), (-0.000118909, 0.019707, 0.66817, 1), (0.414001, 0.558038, 0.74373, 1)], [(0.00223079, 0.0223592, 0.999352, 1), (0.00112035, 0.028812, 1.0005, 1), (-0.000767699, 0.0327184, 0.999658, 1), (-0.0011293, 0.0361733, 1.00279, 1)]]) , 
 	    )
 	leafshape.name = "leafshape"
-	panel_0 = ({'active': True, 'visible': True, 'name': 'Panel 1'},[('Curve2D',leafsection),('Curve2D',applesection),('Function',longproba),('Function',shortproba),('NurbsPatch',leafshape)])
+	panel_0 = ({'name': 'Panel 1', 'active': True, 'visible': True},[('Curve2D',leafsection),('Curve2D',applesection),('Function',longproba),('Function',shortproba),('NurbsPatch',leafshape)])
 	parameterset = [panel_0,]
 	context["__functions__"] = [('longproba',longproba),('shortproba',shortproba),]
 	context["__curves__"] = [('leafsection',leafsection),('applesection',applesection),]
