@@ -1,3 +1,4 @@
+### Initialization code
 from notebook_util import notebook
 exec(notebook('Apple Tree Simulation - Organs.ipynb'))
 exec(notebook('Apple Tree Simulation - Architecture.ipynb'))
@@ -6,15 +7,23 @@ from math import *
 from openalea.plantgl.all import Revolution
 from sensitivityanalysis_bash import plant_irradiance, illuminate
 import meteo
+leafshape.ustride = 6
+leafshape.vstride = 6
 
 from random import seed
 seed(int(SEED))
 from numpy.random import seed
 seed(int(SEED))
 
-leafshape.ustride = 6
-leafshape.vstride = 6
+# Parameters
 
+extern(BRANCH_ELASTICITY=0.01)
+extern(INTERNODE_FLENGTH=3.5)
+extern(LONGGU_PEAK_POSITION=0.5)
+extern(LONGGU_PEAK_INTENSITY=1)
+extern(LONGGU_EXTEND=0.5)
+
+# Scheduling
 cdate = None
 prevdate = None
 def initcdate():
@@ -61,7 +70,10 @@ def EndEach(lstring, lscene):
 
 initial_view = 20
 
-branchingmatrixtype = estimatebranchingmatrixtype(LONGGU_PEAK_POSITION, 1, 0.3) 
+
+branchingmatrixtype = estimatebranchingmatrixtype(LONGGU_PEAK_POSITION, 
+                                                  LONGGU_PEAK_INTENSITY, 
+                                                  LONGGU_EXTEND) 
 
 module Meristem
 module Leaf
@@ -198,11 +210,10 @@ Leaf(p) :
     produce ,(10)  @g(leafshape,length) # SetContour(leafsection) TextureVScale(1./length) _(width/2) F(length)
 
 
-Flower(t) :
-  nproduce [ F(3) ,(11) &(90) TextureScale(1) @o(3)]
+Flower(t) --> [ F(3) ,(10) ,(4) _(0.001) F(6*cos(pi*(t/60.)),6*sin(pi*(t/60.)))  ]
 
 Fruit :
-  nproduce [ @v @h &(90) @Tp(0,0,-1) @Ts(0.1) ,(2) _(0.05) nF(1,0.1)  ,(3) f(1.5) @g(Revolution(applesection),3) ]
+  nproduce [ @v @h &(90) @Tp(0,0,-1) @Ts(0.1) ,(2) _(0.05) nF(1,0.1)  ,(3) f(1.5) @g(Revolution(applesection),6) ]
 
 SimuInfo:
   produce [@2D @M(0.7,0.8) @L(str(cdate), 20)]
@@ -220,7 +231,7 @@ def __initialiseContext__(context):
 	Color_11 = pgl.Material("Color_11" , ambient = (131,127,57) , diffuse = 1.22137 , )
 	Color_11.name = "Color_11"
 	context.turtle.setMaterial(11,Color_11)
-	scalars = [('SEED', 'Integer', 0, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.01, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 3.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 2, 1, 100), ('LIGHTON', 'Bool', False), ('ORCHARD', 'Bool', True)]
+	scalars = [('SEED', 'Integer', 0, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('TIMESTEP', 'Integer', 2, 1, 100), ('LIGHTON', 'Bool', False), ('ORCHARD', 'Bool', False)]
 	context["__scalars__"] = scalars
 	for s in scalars:
 		if not s[1] == "Category" : context[s[0]] = s[2]

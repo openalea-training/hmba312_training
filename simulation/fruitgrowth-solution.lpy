@@ -1,6 +1,9 @@
+### Initialization code
 from notebook_util import notebook
 exec(notebook('Apple Tree Simulation - Organs.ipynb'))
 exec(notebook('Apple Tree Simulation - Architecture.ipynb'))
+leafshape.ustride = 6
+leafshape.vstride = 6
 
 from math import *
 from openalea.plantgl.all import Revolution
@@ -11,10 +14,12 @@ seed(SEED)
 from numpy.random import seed
 seed(SEED)
 
+# Parameters
 
-leafshape.ustride = 6
-leafshape.vstride = 6
+extern(BRANCH_ELASTICITY=0.01)
+extern(INTERNODE_FLENGTH=3.5)
 
+#Scheduling
 
 cdate = None
 prevdate = None
@@ -293,8 +298,7 @@ Leaf(p, c) :
     produce ,(20+color)   @g(leafshape, length) # SetContour(leafsection) TextureVScale(1./length) _(width/2) F(length)
 
 
-Flower(t, c) :
-  nproduce [ F(3) ,(11) &(90) TextureScale(1) @o(3)]
+Flower(t) --> [ F(3) ,(10) ,(4) _(0.001) F(3*cos(pi*(t/60.)),3*sin(pi*(t/60.)))  ]
 
 Fruit(p, c) :
   color = (c.colorid % 20)
@@ -383,7 +387,7 @@ def __initialiseContext__(context):
 	Color_40 = pgl.Material("Color_40" , ambient = (60,0,60) , diffuse = 3 , )
 	Color_40.name = "Color_40"
 	context.turtle.setMaterial(40,Color_40)
-	scalars = [('SEED', 'Integer', 63, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('BRANCH_ELASTICITY', 'Float', 0.01, 0.0, 0.1, 2), ('INTERNODE_FLENGTH', 'Float', 3.5, 0.0, 5.0, 1), ('LONGGU_PEAK_POSITION', 'Float', 0.5, 0.0, 0.9, 1), ('TIMESTEP', 'Integer', 1, 1, 100), ('ZONEPOOL', 'Bool', False), ('FULLPLANT', 'Bool', False), ('GROWTHDELAY', 'Integer', 5, 1, 20), ('POOLORDER', 'Integer', 2, 0, 2)]
+	scalars = [('SEED', 'Integer', 63, 0, 100), ('INSERTION_ANGLE', 'Integer', 45, 0, 90), ('PHYLLOTAXY', 'Integer', 144, 0, 359), ('TIMESTEP', 'Integer', 1, 1, 100), ('ZONEPOOL', 'Bool', False), ('FULLPLANT', 'Bool', False), ('GROWTHDELAY', 'Integer', 5, 1, 20), ('POOLORDER', 'Integer', 2, 0, 2)]
 	context["__scalars__"] = scalars
 	for s in scalars:
 		if not s[1] == "Category" : context[s[0]] = s[2]
