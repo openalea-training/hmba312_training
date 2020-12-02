@@ -2,7 +2,7 @@
 import pandas
 import numpy
 from alinea.caribu.CaribuScene import CaribuScene
-from alinea.caribu.light import light_sources
+from alinea.caribu.light import light_source  # here to avoid import line in notebook
 
 from openalea.lpy import Lsystem
 
@@ -17,15 +17,7 @@ def run_lsystem(lsystem='leafy.lpy', parameters=None):
     return lsys, lstring, lscene
 
 
-def illuminate(scene, sky=None, sun=None, pattern=None, scene_unit='cm'):
-    if sky is None and sun is None:
-        light = None
-    else:
-        light = []
-    if sky is not None:
-        light += light_sources(*sky)
-    if sun is not None:
-        light += light_sources(*sun)
+def illuminate(scene, light=None, pattern=None, scene_unit='cm'):
     infinite = False
     if pattern is not None:
         infinite = True
@@ -46,7 +38,7 @@ def leaf_irradiance(df, lstring, leaf_name='Leaf', aggregate=False):
 
 def toric_canopy_pattern(dx=80, dy=5, density=None):
     if density is not None:
-        if dx is not None: 
+        if dx is not None:
             dy = 1. / density / (dx / 100.) * 100
         elif dy is not None:
             dx = 1. / density / (dy / 100.) * 100
