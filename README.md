@@ -54,7 +54,7 @@
            - `jupyter notebook lsystem/L-systems.ipynb`
 
 * 14h00 - 17h00 : 
-   - 45min : Simulating plants with L-systems - Video - FB
+   - 45min : [Simulating fruit tree with L-systems](./pdf_lessons/6-ModellingArchi.pdf) - Video - FB
       - [Part 1](https://video.umontpellier.fr/video/7817-hbma312-modelisation-de-larchitecture-des-fruitiers-part-1/) - [Part 2](https://video.umontpellier.fr/video/7818-hbma312-modelisation-de-larchitecture-des-fruitiers-part-2/) 
       - Rules of organ development using a thermal time model
       - Stochastic modelling of budburst
