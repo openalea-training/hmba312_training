@@ -4,6 +4,7 @@ exec(notebook('Apple Tree Simulation - Architecture.ipynb'))
 
 from math import *
 from openalea.plantgl.all import Revolution
+import meteo
 
 from random import seed
 seed(SEED)
