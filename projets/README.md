@@ -24,8 +24,11 @@ The list of proposed fruiting trees to model with related information are given 
     - L-PEACH: A Computer-based Model to Understand How Peach Trees Grow. Lopez G. et al. 2010. HortTechnology. 20: 983-990.
     - Long proleptic and sylleptic shoots in peach (Prunus persica L. Batsch) trees have similar, predetermined, maximum numbers of nodes and bud fate patterns. Pratts-Linas et al. 2019. Annals of Botany. 123: 993-1004.
     
-- *Vine* 
+- *Grapevine* 
     - Main adviser: Christian Fournier
+	- [Paper1](https://bsppjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/j.1365-3059.2007.01783.x).
+	- [Paper2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2710267/pdf/mcm170.pdf).
+
 
 - *Kiwi vine*.
     - Main adviser: Christophe Pradal

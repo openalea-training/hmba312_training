@@ -1,13 +1,12 @@
 # Introduction to plant modelling:the Functional Structural Plant Models.
 ## Dates: 30 Nov. - 3 Dec. 2020
 
-## Online: Zoom meeting
+## Online: [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09)
 
 ## Live Tutorials on Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/openalea-training/hbma312_training/HEAD)
 
 ## Monday 30/11 : Prerequisite
 
-Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) 
  
 * 9h - 12h00 : 
    - 15min : [Class presentation](./pdf_lessons/0-presentation-cours.pdf) - Frédéric Boudon (FB)
@@ -40,7 +39,6 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJ
 
 ## Tuesday 01/12 : Architecture modelling
 
-Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0NFTVpxN0x0UT09)
 
 * 9h - 12h : 
    - 1h30 : [The L-System formalism](./pdf_lessons/5-Lsystems.pdf) - Video - FB
@@ -57,6 +55,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1Juaml
 
 * 14h00 - 17h00 : 
    - 45min : Simulating plants with L-systems - Video - FB
+      - [Part 1](https://video.umontpellier.fr/video/7817-hbma312-modelisation-de-larchitecture-des-fruitiers-part-1/) - [Part 2](https://video.umontpellier.fr/video/7818-hbma312-modelisation-de-larchitecture-des-fruitiers-part-2/) 
       - Rules of organ development using a thermal time model
       - Stochastic modelling of budburst
       - Branch geometry (empirical model, mechanistic model)
@@ -72,17 +71,20 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1Juaml
 
 ## Wednesday 02/12 : Modelling functioning 
 
-Meeting [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COHJNUlQyRi9DZz09)
-
 * 9h - 12h : 
    - 45min : Ecophysiological processes. From crop model to FSPM  - Video - BP
         - [Part 1](https://video.umontpellier.fr/video/7753-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-1/) - [Part 2](https://video.umontpellier.fr/video/7752-hbma312-modelisation-du-fonctionnement-des-plantes-des-modeles-crop-au-fspm-part-2/)
         - Light interception, photosynthesis, Carbon Balance, Water Balance
         - Crop vs FSPM approaches
    - 15min : Questions - BP
-   - 45min : Light modelling, RUE and photosynthesis - Video - Christian Fournier (CF)
+   - 45min : Modelling Light and photosynthesis: Christian Fournier (CF)
+        - [Introduction](./pdf_lessons/7-0_light_phothosynthesis_intro.pdf) - [Video](https://video.umontpellier.fr/video/7867-hbma312-light-modelling-rue-and-photosynthesis-part-1/) - CF
+        - [Light](./pdf_lessons/7-1_modelling_light.pdf) - [Video](https://video.umontpellier.fr/video/7885-hbma312-light-interception/) - CF
+        - [Photosynthesis](./pdf_lessons/7-2_modelling_photosynthesis.pdf) - [Video](https://video.umontpellier.fr/video/7884-hbma312-photosynthese/) - CF
    - 15min : Questions - CF
    - 1h : Practical work and exercises on light interception and photosynthesis - CF & RP
+        - To launch the notebooks, launch in a conda console
+           - `jupyter notebook "light/"`
 
 * 14h00 - 17h00 : 
    - 45min : Recent work on carbon allocation model / signaling in apple tree - Video - Benoit Pallas
@@ -121,6 +123,15 @@ During this training, some time is devoted to the realization of an architectura
 The list of proposed fruiting trees to model with related information are given [here](./projets/README.md)
 
 Groups of two should be constituted and each group will work on a different tree specie. To determine assignment, you need to fill the following [form](https://framadate.org/Ztv1NOQCl7Qy3FT3). If two people are already assigned to a tree specie, the specie is no more selectable.
+
+### Zoom session for projects:
+
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) Projet Mango
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0NFTVpxN0x0UT09) Projet Palm
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COHJNUlQyRi9DZz09) Projet Peach
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG5jY0NmdjRndz09) Project Grape Vine
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88329455776?pwd=NVl3bkJaMk9haFd4d3BQTXA5b3Jqdz09) Project Kiwi Vine
+
 
 # Modelling environment
 
