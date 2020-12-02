@@ -81,8 +81,6 @@ def StartEach():
 
 
 def EndEach():
-  pass 
-  #print 'Total Leaf Area :',totalleafarea,' for ', totalleafnb,'leaves.'
   if cdate.year == 2011 and cdate.month == 9:
     Stop()
 
