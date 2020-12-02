@@ -7,10 +7,9 @@ from alinea.caribu.light import light_sources
 from openalea.lpy import Lsystem
 
 
-
 def run_lsystem(lsystem='leafy.lpy', parameters=None):
     if parameters:
-        lsys = Lsystem(lsystem, {'parameters':parameters})
+        lsys = Lsystem(lsystem, {'parameters': parameters})
     else:
         lsys = Lsystem(lsystem)
     lstring = lsys.iterate()
@@ -43,3 +42,15 @@ def leaf_irradiance(df, lstring, leaf_name='Leaf', aggregate=False):
     if aggregate:
         df = df.apply(numpy.mean)
     return df
+
+
+def toric_canopy_pattern(dx=80, dy=5, density=None):
+    if density is not None:
+        if dx is not None: 
+            dy = 1. / density / (dx / 100.) * 100
+        elif dy is not None:
+            dx = 1. / density / (dy / 100.) * 100
+        else:
+            raise ValueError('At least one grid dimension (dx, dy) should be specified')
+    return (-0.5 * dx, -0.5 * dy,
+             0.5 * dx, 0.5 * dy)
