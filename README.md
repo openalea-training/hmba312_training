@@ -84,7 +84,7 @@
    - 15min : Questions - CF
    - 1h : Practical work and exercises on light interception and photosynthesis - CF & RP
         - To launch the notebooks, launch in a conda console
-           - `jupyter notebook "light/"`
+           - `jupyter notebook "light/light_interception.ipynb"`
 
 * 14h00 - 17h00 : 
    - 45min : Recent work on carbon allocation model / signaling in apple tree - Video - Benoit Pallas

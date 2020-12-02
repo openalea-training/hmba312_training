@@ -2,12 +2,8 @@ import pandas
 import numpy
 import matplotlib.pyplot as plt
 import openalea.plantgl.all as pgl
-from alinea.astk.sun_and_sky import sun_sky_sources, sky_sources, \
-    cie_relative_luminance
-from alinea.caribu.CaribuScene import CaribuScene
-from alinea.caribu.light import light_sources
-from objects import mtg_tree, mtg_nenuphar, add_sun, add_sky, simple_tree, display_leaves
 
+from light.light_it import illuminate
 
 
 def read_meteo_mpt(when='winter'):
@@ -74,22 +70,6 @@ def test_scene(s):
                 print(pid)
 
 
-def illuminate(scene, sky=None, sun=None, pattern=None):
-    if sky is None and sun is None:
-        sky = sky_sources()
-    light = []
-    if sky is not None:
-        light += light_sources(*sky)
-    if sun is not None:
-        light += light_sources(*sun)
-    infinite=False
-    if pattern is not None:
-        infinite = True
-    cs = CaribuScene(scene, light=light,scene_unit='cm', pattern=pattern)
-    raw, agg = cs.run(direct=True, simplify=True, infinite=infinite)
-    return cs, raw, agg
-
-
 def display_light(cs, raw):
     cs.plot(raw['Ei'])
 
@@ -100,12 +80,7 @@ def leaf_irradiance(agg, leaves=None, aggregate=False):
     if aggregate:
         df = df.apply(numpy.mean)
     return df
-    
-def leaf_irradiance_lpy(agg, lstring, name='Leaf'):
-    leaves = [pid for pid,m in enumerate(lstring) if m.name == name]
-    irr = leaf_irradiance(agg, leaves)
-    irr.loc[:,'rank'] = range(1, len(leaves) + 1)
-    return irr
+
 
 def light_response(irradiance, alpha=0.01, Pm=1, R=0):
     return alpha * irradiance * Pm  / (alpha * irradiance + Pm) -R
