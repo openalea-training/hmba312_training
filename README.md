@@ -126,11 +126,11 @@ Groups of two should be constituted and each group will work on a different tree
 
 ### Zoom session for projects:
 
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) Projet Mango
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/85193919928) Projet Mango
 - Meeting [Zoom](https://umontpellier-fr.zoom.us/j/83489418238?pwd=STJsTU90cWFYYWFzZ2M5Z2orUWxKUT09) Projet Palm
 - Meeting [Zoom](https://umontpellier-fr.zoom.us/j/83641538162?pwd=QzNZVEpacktxL1Zud2RDeTFVRHlOQT09) Projet Peach
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/87485453329?pwd=L1l5d01pZ284dFhaQW5wSkc3aGhEQT09) Project Grape Vine
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/83699221296?pwd=dEZJbTY4ell0TzdQTWVseDVsZUtmUT09) Project Kiwi Vine
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/2433385877?pwd=TjcwYVpXczE0c0JsWmh2dFBhVFI3UT09) Project Grape Vine
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/87220213200) Project Kiwi Vine
 
 
 # Modelling environment
