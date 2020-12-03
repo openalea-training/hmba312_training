@@ -127,10 +127,10 @@ Groups of two should be constituted and each group will work on a different tree
 ### Zoom session for projects:
 
 - Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) Projet Mango
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0NFTVpxN0x0UT09) Projet Palm
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COHJNUlQyRi9DZz09) Projet Peach
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG5jY0NmdjRndz09) Project Grape Vine
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88329455776?pwd=NVl3bkJaMk9haFd4d3BQTXA5b3Jqdz09) Project Kiwi Vine
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/83489418238?pwd=STJsTU90cWFYYWFzZ2M5Z2orUWxKUT09) Projet Palm
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/83641538162?pwd=QzNZVEpacktxL1Zud2RDeTFVRHlOQT09) Projet Peach
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/87485453329?pwd=L1l5d01pZ284dFhaQW5wSkc3aGhEQT09) Project Grape Vine
+- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/83699221296?pwd=dEZJbTY4ell0TzdQTWVseDVsZUtmUT09) Project Kiwi Vine
 
 
 # Modelling environment
