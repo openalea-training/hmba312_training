@@ -128,7 +128,7 @@ Groups of two should be constituted and each group will work on a different tree
 
 - Meeting [Zoom](https://umontpellier-fr.zoom.us/j/85193919928) Projet Mango
 - Meeting [Zoom](https://umontpellier-fr.zoom.us/j/83489418238?pwd=STJsTU90cWFYYWFzZ2M5Z2orUWxKUT09) Projet Palm
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/83641538162?pwd=QzNZVEpacktxL1Zud2RDeTFVRHlOQT09) Projet Peach
+- Meeting [Zoom](https://us04web.zoom.us/j/9939608368?pwd=akpVbi9GTjBLdHhWbFFtOHk5Sy9HUT09) Projet Peach
 - Meeting [Zoom](https://umontpellier-fr.zoom.us/j/2433385877?pwd=TjcwYVpXczE0c0JsWmh2dFBhVFI3UT09) Project Grape Vine
 - Meeting [Zoom](https://umontpellier-fr.zoom.us/j/87220213200) Project Kiwi Vine
 
