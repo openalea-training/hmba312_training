@@ -1,13 +1,11 @@
 # Introduction to plant modelling:the Functional Structural Plant Models.
 ## Dates: 30 Nov. - 3 Dec. 2020
 
-## Online: [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09)
 
 ## Live Tutorials on Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/openalea-training/hbma312_training/HEAD)
 
 ## Monday 30/11 : Prerequisite
 
- 
 * 9h - 12h00 : 
    - 15min : [Class presentation](./pdf_lessons/0-presentation-cours.pdf) - Frédéric Boudon (FB)
    - 15min : [The modelling approach](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/1_modelling_approach_pradal.pdf) - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - Christophe Pradal (CP)
@@ -95,8 +93,6 @@
 
 ## Thursday 03/12 : Sensitivity analysis and project
 
-Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG5jY0NmdjRndz09)
-
 * 9h - 12h :
    - 45min : Sensitivity analysis - [Video](https://video.umontpellier.fr/video/7681-hbma312-analyse-de-sensibilite/) - Raphael Perez (RP)
      - Concepts and methods
@@ -122,15 +118,7 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFR
 During this training, some time is devoted to the realization of an architectural and functional model (called FSPM) of a fruiting tree. Some hypothesis on the model should be set and addressed using a sensitivity analysis on the model. A presentation of the model, its hypothesis, the related bibliography, the analysis of the model and the biological conclusion should be prepared for the examination day. The presentation should follow a **modelling approach** as presented in the first day. A critical point will be to present clearly the **research question** that the model will address, and its **hypotheses**.
 The list of proposed fruiting trees to model with related information are given [here](./projets/README.md)
 
-Groups of two should be constituted and each group will work on a different tree specie. To determine assignment, you need to fill the following [form](https://framadate.org/Ztv1NOQCl7Qy3FT3). If two people are already assigned to a tree specie, the specie is no more selectable.
-
-### Zoom session for projects:
-
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/85193919928) Projet Mango
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/83489418238?pwd=STJsTU90cWFYYWFzZ2M5Z2orUWxKUT09) Projet Palm
-- Meeting [Zoom](https://us04web.zoom.us/j/9939608368?pwd=akpVbi9GTjBLdHhWbFFtOHk5Sy9HUT09) Projet Peach
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/2433385877?pwd=TjcwYVpXczE0c0JsWmh2dFBhVFI3UT09) Project Grape Vine
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/87220213200) Project Kiwi Vine
+Groups of two should be constituted and each group will work on a different tree specie. To determine assignment, you need to fill the following form. If two people are already assigned to a tree specie, the specie is no more selectable.
 
 
 # Modelling environment
