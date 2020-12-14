@@ -1,13 +1,11 @@
 # Introduction to plant modelling:the Functional Structural Plant Models.
 ## Dates: 30 Nov. - 3 Dec. 2020
 
-## Online: [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09)
 
 ## Live Tutorials on Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/openalea-training/hbma312_training/HEAD)
 
 ## Monday 30/11 : Prerequisite
 
- 
 * 9h - 12h00 : 
    - 15min : [Class presentation](./pdf_lessons/0-presentation-cours.pdf) - Frédéric Boudon (FB)
    - 15min : [The modelling approach](https://github.com/openalea-training/hbma312_training/blob/master/pdf_lessons/1_modelling_approach_pradal.pdf) - [Video](https://video.umontpellier.fr/video/7759-hbma312-approche-de-modelisation/) - Christophe Pradal (CP)
@@ -95,14 +93,12 @@
 
 ## Thursday 03/12 : Sensitivity analysis and project
 
-Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG5jY0NmdjRndz09)
-
 * 9h - 12h :
    - 45min : Sensitivity analysis - [Video](https://video.umontpellier.fr/video/7681-hbma312-analyse-de-sensibilite/) - Raphael Perez (RP)
      - Concepts and methods
    - 15min : Questions
    - 1H : Practical work and exercises.  - RP & CF
-         - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/sensitivityanalysis/TD_SensitivityAnalysis_Part1.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/sensitivityanalysis/TD_SensitivityAnalysis_Part2.ipynb)
+         - see the [notebook 1](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/sensitivityanalysis/TD_SensitivityAnalysis_Part1.ipynb) and [notebook 2](https://nbviewer.jupyter.org/github/openalea-training/hbma312_training/blob/master/sensitivityanalysis/TD_SensitivityAnalysis_Part2_exercices.ipynb)
          - To launch the notebooks, launch in a conda console
              - `jupyter notebook "sensitivityanalysis/TD_SensitivityAnalysis_Part1.ipynb"`
              - `jupyter notebook "sensitivityanalysis/TD_SensitivityAnalysis_Part2.ipynb"`
@@ -115,22 +111,14 @@ Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFR
 ## Wednesday 16/12 Afternoon : Presentation of the modelling projects
 
  * 13h30 - 17h30 :
-   - Each group will have to present its work for 15 minutes. It will be follow by 10 minutes of questions and 5 minutes of deliberation.
+   - Each group will have to present its work for 15 minutes. It will be followed by 10 minutes of questions and 5 minutes of deliberation.
 
 # Modelling project
 
-During this training, some time is devoted to the realization of an architectural and functional model (called FSPM) of a fruiting tree. Some hypothesis on the model should be set and address using a sensitivity analysis on the model. A presentation of the model, its hypothesis, the related bibliography, the analysis of the model and the biological conclusion should be prepared for the examination day. The presentation should follow a **modelling approach** as presented in the first day. A critical point will be to present clearly the **research question** that the model will address, and its **hypotheses**.
+During this training, some time is devoted to the realization of an architectural and functional model (called FSPM) of a fruiting tree. Some hypothesis on the model should be set and addressed using a sensitivity analysis on the model. A presentation of the model, its hypothesis, the related bibliography, the analysis of the model and the biological conclusion should be prepared for the examination day. The presentation should follow a **modelling approach** as presented in the first day. A critical point will be to present clearly the **research question** that the model will address, and its **hypotheses**.
 The list of proposed fruiting trees to model with related information are given [here](./projets/README.md)
 
-Groups of two should be constituted and each group will work on a different tree specie. To determine assignment, you need to fill the following [form](https://framadate.org/Ztv1NOQCl7Qy3FT3). If two people are already assigned to a tree specie, the specie is no more selectable.
-
-### Zoom session for projects:
-
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88213604500?pwd=NEpVb1FPditqWVJERnRhazBJeFlTZz09) Projet Mango
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/86375095759?pwd=MFc5T3Y2K1JuamlUT0NFTVpxN0x0UT09) Projet Palm
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/81761612590?pwd=dFVUZllCbmVicW9COHJNUlQyRi9DZz09) Projet Peach
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88035676587?pwd=MTNFTDJ4QjZ6WFRaMG5jY0NmdjRndz09) Project Grape Vine
-- Meeting [Zoom](https://umontpellier-fr.zoom.us/j/88329455776?pwd=NVl3bkJaMk9haFd4d3BQTXA5b3Jqdz09) Project Kiwi Vine
+Groups of two should be constituted and each group will work on a different tree specie. To determine assignment, you need to fill the following form. If two people are already assigned to a tree specie, the specie is no more selectable.
 
 
 # Modelling environment
