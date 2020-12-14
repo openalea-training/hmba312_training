@@ -6,28 +6,6 @@ import openalea.plantgl.all as pgl
 from light.light_it import illuminate
 
 
-def read_meteo_mpt(when='winter'):
-    if when == 'winter':
-        path = 'incoming_radiation_ZA13.csv'
-    else:
-        path = 'incoming_radiation_ZB13.csv'
-    df = pandas.read_csv(path, index_col=0, parse_dates=True,
-                   date_parser=lambda col: pandas.to_datetime(col, utc=True))
-    df.index = df.index.tz_convert('Europe/Paris')
-
-    return df
-
-def montpellier_spring_2013():
-    return read_meteo_mpt('spring')
-
-def montpellier_winter_2013():
-    return read_meteo_mpt('winter')
-
-def actual_irradiance(daydate, db):
-    when = pandas.date_range(start=daydate, freq='H', periods=25,
-                             tz='Europe/Paris')
-    return db.loc[when,'ghi']
-
 def apple_tree():
     return pgl.Scene('appletree-result.geom')
 
